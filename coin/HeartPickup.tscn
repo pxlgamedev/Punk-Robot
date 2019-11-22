@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://coin/coin.gd" type="Script" id=1]
+[ext_resource path="res://Effects/FXHeart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MatShadow.tres" type="Material" id=3]
+[ext_resource path="res://player/Heart.png" type="Texture" id=4]
+[ext_resource path="res://player/light.png" type="Texture" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.5
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.22 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.87263 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.33 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Light2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.07, 0.81 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.01 ]
+}
+
+[sub_resource type="CircleShape2D" id=4]
+
+[sub_resource type="CircleShape2D" id=5]
+
+[node name="Heart" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+value = "Health"
+points = 1
+effect = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.909091 )
+material = ExtResource( 3 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+hframes = 8
+frame = 3
+
+[node name="FXLocation" type="Position2D" parent="Sprite"]
+
+[node name="Light2D" type="Light2D" parent="Sprite"]
+position = Vector2( -1.52588e-005, 1.90735e-005 )
+scale = Vector2( 0.742188, 0.703125 )
+texture = ExtResource( 5 )
+color = Color( 0.105882, 0.658824, 0.733333, 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "Glow"
+anims/Glow = SubResource( 2 )
+anims/taken = SubResource( 3 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_coin_body_enter"]

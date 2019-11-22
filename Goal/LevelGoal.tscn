@@ -1,0 +1,152 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Goal/LevelGoal.gd" type="Script" id=1]
+[ext_resource path="res://Effects/4dReactor.png" type="Texture" id=2]
+[ext_resource path="res://player/light.png" type="Texture" id=3]
+[ext_resource path="res://background/audio/sound_coin.wav" type="AudioStream" id=4]
+[ext_resource path="res://player/bulletbounce.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "spin"
+length = 4.7
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("../LevelGoal/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 1.751, 1.752, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 19, 11, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 2.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../LevelGoal/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.22 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.87263 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../LevelGoal/Particles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.773156 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../LevelGoal/Sprite:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.33 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../LevelGoal/Sound:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.01 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 1
+
+[sub_resource type="GradientTexture" id=5]
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 10.0
+flag_disable_z = true
+gravity = Vector3( 0, 90, 0 )
+initial_velocity = 121.98
+angular_velocity = -2.49891e+038
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+color_ramp = SubResource( 5 )
+
+[node name="LevelGoal" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.635294, 0.94902, 1, 1 )
+self_modulate = Color( 1, 1, 1, 0.909091 )
+position = Vector2( 9.53674e-007, -9.53674e-007 )
+texture = ExtResource( 2 )
+vframes = 4
+hframes = 5
+frame = 14
+
+[node name="Light2D" type="Light2D" parent="Sprite"]
+position = Vector2( -9.53674e-007, 9.53674e-007 )
+texture = ExtResource( 3 )
+color = Color( 0.270588, 0.937255, 0.937255, 1 )
+
+[node name="FXLocation" type="Position2D" parent="Sprite"]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "spin"
+anims/spin = SubResource( 1 )
+anims/taken = SubResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Particles" type="Particles2D" parent="."]
+material = SubResource( 4 )
+lifetime = 2.0
+explosiveness = 1.0
+draw_order = 65793
+process_material = SubResource( 6 )
+texture = ExtResource( 5 )
+
+[node name="Enabler" type="VisibilityEnabler2D" parent="."]
+pause_particles = false
+[connection signal="body_entered" from="." to="." method="_on_coin_body_enter"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://platform/moving_platform.gd" type="Script" id=1]
+[ext_resource path="res://platform/moving_platform.png" type="Texture" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 2.97415, -6.76464, -84.3527, -11.8551, -84.3527, -11.8551, -76.9583, 8.62166, -1.30786, 14.8785, 72.9464, 12.5529, 79.8148, -9.98422 )
+
+[node name="MovingPlatform" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Platform" type="KinematicBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="Platform"]
+light_mask = 3
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform"]
+polygon = PoolVector2Array( -88, -24, 88, -24, 88, 24, -88, 24 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Platform"]
+occluder = SubResource( 1 )

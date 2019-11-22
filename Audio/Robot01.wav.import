@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Robot01.wav-d31e0b3773fefc05f0a6d2927adb6572.sample"
+
+[deps]
+
+source_file="res://Audio/Robot01.wav"
+dest_files=[ "res://.import/Robot01.wav-d31e0b3773fefc05f0a6d2927adb6572.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
