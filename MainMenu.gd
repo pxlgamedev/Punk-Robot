@@ -64,6 +64,7 @@ func _next_level(next):
 				n.queue_free()
 		$Stage.call_deferred("add_child", newLevel)
 		change_panel(Page.startLevel)
+		$Music.stream_paused = true
 
 func _physics_process(delta):
 	bg1.scroll_offset.x -= 10
@@ -93,12 +94,14 @@ func _physics_process(delta):
 			get_tree().paused = false
 			change_panel(Page.startLevel)
 			disable_gui(true)
+			$Music.stream_paused = true
 			return
 		if get_tree().paused == false:
 			if get_tree().get_root().get_node("Menu/Stage/").get_child_count() > 0:
 				get_tree().paused = true
 				change_panel(Page.p1)
 				disable_gui(false)
+				$Music.stream_paused = true
 				return
 
 func disable_gui(inp):
