@@ -257,6 +257,7 @@ position = Vector2( 0.291992, 1.78734 )
 shape = SubResource( 13 )
 
 [node name="UI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 0
 
 [node name="Left" type="TouchScreenButton" parent="UI"]
