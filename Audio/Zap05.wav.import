@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Zap05.wav-9c4ee2bdb86c1e0312b4cc92cc7c9dd1.sample"
+
+[deps]
+
+source_file="res://Audio/Zap05.wav"
+dest_files=[ "res://.import/Zap05.wav-9c4ee2bdb86c1e0312b4cc92cc7c9dd1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

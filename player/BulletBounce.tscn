@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://player/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Effects/FXBoing.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/bulletbounce.png" type="Texture" id=3]
+[ext_resource path="res://player/light.png" type="Texture" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 5.0
+bounce = 5.0
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 4.0948
+
+[sub_resource type="Animation" id=6]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1.2, 2.1, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.7, 1.0, 0.7, 1.0, 0.01 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_bullet_end"
+} ]
+}
+
+[node name="Bullet" type="RigidBody2D"]
+material = SubResource( 1 )
+mass = 0.2
+physics_material_override = SubResource( 2 )
+gravity_scale = 2.0
+continuous_cd = 2
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+effect = ExtResource( 2 )
+bulletBounce = true
+
+[node name="Particles2D" type="CPUParticles2D" parent="."]
+material = SubResource( 3 )
+amount = 6
+lifetime = 0.5
+speed_scale = 5.0
+local_coords = false
+texture = ExtResource( 3 )
+gravity = Vector2( 0, 10 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 4 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "shutdown"
+anims/shutdown = SubResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 1.07928, 2.15851 )
+scale = Vector2( 0.430433, 0.443518 )
+texture = ExtResource( 4 )
+color = Color( 0.184314, 0.819608, 0.313726, 1 )
+shadow_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+[connection signal="body_entered" from="." to="." method="_on_bullet_body_enter"]
+[connection signal="timeout" from="Timer" to="." method="_bullet_end"]
