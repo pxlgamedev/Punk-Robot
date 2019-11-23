@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://coin/coin.gd" type="Script" id=1]
 [ext_resource path="res://Effects/FXZap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MatShadow.tres" type="Material" id=3]
 [ext_resource path="res://coin/coin.png" type="Texture" id=4]
 [ext_resource path="res://player/light.png" type="Texture" id=5]
-[ext_resource path="res://player/bulletbounce.png" type="Texture" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
@@ -57,36 +56,24 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Particles:emitting")
+tracks/2/path = NodePath("Sprite:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.773156 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.33 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite/Light2D:energy")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Light2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0.08, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -95,24 +82,7 @@ tracks/4/keys = {
 
 [sub_resource type="CircleShape2D" id=4]
 
-[sub_resource type="CanvasItemMaterial" id=5]
-blend_mode = 1
-
-[sub_resource type="GradientTexture" id=6]
-
-[sub_resource type="ParticlesMaterial" id=7]
-emission_shape = 1
-emission_sphere_radius = 10.0
-flag_disable_z = true
-gravity = Vector3( 0, 90, 0 )
-initial_velocity = 121.98
-angular_velocity = -2.49891e+038
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.2
-color_ramp = SubResource( 6 )
-
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=5]
 
 [node name="AmmoZap" type="RigidBody2D"]
 collision_layer = 2
@@ -133,6 +103,7 @@ frame = 3
 [node name="FXLocation" type="Position2D" parent="Sprite"]
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
+visible = false
 position = Vector2( 3.8147e-006, -3.8147e-006 )
 scale = Vector2( 0.253906, 0.253906 )
 texture = ExtResource( 5 )
@@ -147,19 +118,12 @@ anims/taken = SubResource( 3 )
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
 
-[node name="Particles" type="Particles2D" parent="."]
-material = SubResource( 5 )
-lifetime = 2.0
-explosiveness = 1.0
-draw_order = 65793
-process_material = SubResource( 7 )
-texture = ExtResource( 6 )
-
-[node name="Enabler" type="VisibilityEnabler2D" parent="."]
-pause_particles = false
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 8 )
+shape = SubResource( 5 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_coin_body_enter"]
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

@@ -9,7 +9,6 @@ export var effect = preload("res://Effects/POINT10.tscn")
 
 func _ready():
 	$Sprite/Light2D.enabled = false
-	$Sprite/Light2D.enabled = true
 
 func _on_coin_body_enter(body):
 	if not taken and body is Player:
@@ -30,3 +29,9 @@ func _on_coin_body_enter(body):
 	if not taken:
 		gravity_scale = 1
 		mass = 1
+
+func _on_VisibilityEnabler2D_screen_entered():
+	$Sprite/Light2D.enabled = true
+
+func _on_VisibilityEnabler2D_screen_exited():
+	$Sprite/Light2D.enabled = false

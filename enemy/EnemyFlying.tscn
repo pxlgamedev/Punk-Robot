@@ -3,7 +3,7 @@
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://MatShadow.tres" type="Material" id=2]
 [ext_resource path="res://enemy/walker.png" type="Texture" id=3]
-[ext_resource path="res://Audio/Robot01.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Robot04wav.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.6935, 19.1017 )
@@ -136,11 +136,12 @@ tracks/2/keys = {
 radius = 13.4556
 height = 14.2002
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="EnemyFlying" type="KinematicBody2D"]
 collision_layer = 3
 script = ExtResource( 1 )
 staticStart = false
 respawn = true
+flying = true
 
 [node name="DamageRange" type="Area2D" parent="."]
 
@@ -198,6 +199,8 @@ volume_db = -10.0
 pitch_scale = 0.9
 
 [node name="Spawner" type="VisibilityEnabler2D" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="DamageRange" to="." method="_on_Enemy_body_entered"]
 [connection signal="screen_entered" from="Spawner" to="." method="_on_Spawner_screen_entered"]
 [connection signal="screen_exited" from="Spawner" to="." method="_on_Spawner_screen_exited"]

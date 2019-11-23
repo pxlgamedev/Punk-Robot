@@ -81,7 +81,6 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 16.088
 
 [sub_resource type="CircleShape2D" id=5]
 
@@ -106,6 +105,7 @@ frame = 3
 [node name="FXLocation" type="Position2D" parent="Sprite"]
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
+visible = false
 position = Vector2( -1.52588e-005, 1.90735e-005 )
 scale = Vector2( 0.742188, 0.703125 )
 texture = ExtResource( 5 )
@@ -123,4 +123,8 @@ shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_coin_body_enter"]
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

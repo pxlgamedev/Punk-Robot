@@ -72,6 +72,7 @@ func _physics_process(delta):
 	# Increment counters
 	shoot_time += delta
 	hittimer += delta
+	User_Data.playerPos = self.position
 	if shoot_time > User_Data.store.rate: # check against our firerate
 		ammo0 = true # set the main gun fireable
 

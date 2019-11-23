@@ -8,6 +8,8 @@ extends Node
 # access them from anywhere with User_Data.store.[YourVariable]
 # we can also back up the entire dictionary in one go
 
+var playerPos = Vector2(0,0)
+
 var store = {
 	# you can add as many variables as you want here, they will all be saved
 	level = 1,
