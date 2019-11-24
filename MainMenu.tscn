@@ -1,24 +1,35 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://background/PurplePlanetFall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://background/PurpleMountainBg.tscn" type="PackedScene" id=3]
-[ext_resource path="res://background/IcyBg.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Effects/Boom.png" type="Texture" id=5]
-[ext_resource path="res://MatShadow.tres" type="Material" id=6]
-[ext_resource path="res://Menu/RocketShip.png" type="Texture" id=7]
-[ext_resource path="res://Rocket Ship.gd" type="Script" id=8]
-[ext_resource path="res://Menu/PunkRobot.png" type="Texture" id=9]
-[ext_resource path="res://Menu/ButtonExitGreen.png" type="Texture" id=10]
-[ext_resource path="res://Menu/ButtonExitBlue.png" type="Texture" id=11]
-[ext_resource path="res://Menu/TerrorPurple.png" type="Texture" id=12]
-[ext_resource path="res://Menu/ButtonNewGameGreen.png" type="Texture" id=13]
-[ext_resource path="res://Menu/ButtonNewGameWhite.png" type="Texture" id=14]
-[ext_resource path="res://Menu/ButtonNewGameBlue.png" type="Texture" id=15]
-[ext_resource path="res://Menu/ButtonOptionsGreen.png" type="Texture" id=16]
-[ext_resource path="res://Menu/ButtonOptionsBlue.png" type="Texture" id=17]
-[ext_resource path="res://BlankSquare.png" type="Texture" id=18]
-[ext_resource path="res://Audio/ArcadeNeptune.wav" type="AudioStream" id=19]
+[ext_resource path="res://background/Galaxy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://background/PurplePlanetFall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://background/PurpleMountainBg.tscn" type="PackedScene" id=4]
+[ext_resource path="res://background/IcyBg.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Effects/Boom.png" type="Texture" id=6]
+[ext_resource path="res://MatShadow.tres" type="Material" id=7]
+[ext_resource path="res://Menu/RocketShip.png" type="Texture" id=8]
+[ext_resource path="res://Rocket Ship.gd" type="Script" id=9]
+[ext_resource path="res://Menu/PunkRobotMainTitle.png" type="Texture" id=10]
+[ext_resource path="res://Menu/ButtonExitGreen.png" type="Texture" id=11]
+[ext_resource path="res://Menu/ButtonExitBlue.png" type="Texture" id=12]
+[ext_resource path="res://background/Stars02.png" type="Texture" id=13]
+[ext_resource path="res://Menu/TerrorPurple.png" type="Texture" id=14]
+[ext_resource path="res://Menu/ButtonNewGameGreen.png" type="Texture" id=15]
+[ext_resource path="res://Menu/ButtonNewGameWhite.png" type="Texture" id=16]
+[ext_resource path="res://Menu/ButtonNewGameBlue.png" type="Texture" id=17]
+[ext_resource path="res://Menu/ButtonOptionsGreen.png" type="Texture" id=18]
+[ext_resource path="res://Menu/ButtonOptionsBlue.png" type="Texture" id=19]
+[ext_resource path="res://BlankSquare.png" type="Texture" id=20]
+[ext_resource path="res://BitFont.tres" type="DynamicFont" id=21]
+[ext_resource path="res://coin/Coin10.tscn" type="PackedScene" id=22]
+[ext_resource path="res://coin/Coin20.tscn" type="PackedScene" id=23]
+[ext_resource path="res://coin/Coin30.tscn" type="PackedScene" id=24]
+[ext_resource path="res://coin/Coin50.tscn" type="PackedScene" id=25]
+[ext_resource path="res://coin/HeartPickup.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Menu/PunkRobotSmall.png" type="Texture" id=27]
+[ext_resource path="res://Menu/TextChapComp.png" type="Texture" id=28]
+[ext_resource path="res://Menu/TextChapNext1.png" type="Texture" id=29]
+[ext_resource path="res://Audio/ArcadeNeptune.wav" type="AudioStream" id=30]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BackToMain"
@@ -276,31 +287,31 @@ editor/display_folded = true
 focus_mode = 1
 
 [node name="Title" type="Viewport" parent="BgLayer"]
-size = Vector2( 1080, 540 )
+size = Vector2( 1920, 540 )
 handle_input_locally = false
 disable_3d = true
 render_target_v_flip = true
 render_target_update_mode = 3
+
+[node name="GalaxyBG" parent="BgLayer/Title" instance=ExtResource( 2 )]
 
 [node name="Intro0" type="Viewport" parent="BgLayer"]
-editor/display_folded = true
 size = Vector2( 960, 540 )
 handle_input_locally = false
 disable_3d = true
 render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="PlanetFall" parent="BgLayer/Intro0" instance=ExtResource( 2 )]
+[node name="PlanetFall" parent="BgLayer/Intro0" instance=ExtResource( 3 )]
 
 [node name="Panel1" type="Viewport" parent="BgLayer"]
-editor/display_folded = true
 size = Vector2( 960, 540 )
 handle_input_locally = false
 disable_3d = true
 render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="PurpleBg" parent="BgLayer/Panel1" instance=ExtResource( 3 )]
+[node name="PurpleBg" parent="BgLayer/Panel1" instance=ExtResource( 4 )]
 
 [node name="Panel2" type="Viewport" parent="BgLayer"]
 editor/display_folded = true
@@ -309,7 +320,7 @@ handle_input_locally = false
 render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="IcyBg" parent="BgLayer/Panel2" instance=ExtResource( 4 )]
+[node name="IcyBg" parent="BgLayer/Panel2" instance=ExtResource( 5 )]
 
 [node name="Tween" type="Tween" parent="BgLayer"]
 
@@ -324,7 +335,7 @@ editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 407.255, 148.82 )
 scale = Vector2( 1.69135, 1.68858 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 hframes = 10
 frame = 9
 
@@ -338,12 +349,12 @@ anims/MouseClick = SubResource( 3 )
 [node name="Rocket Ship" type="Sprite" parent="CanvasLayer"]
 editor/display_folded = true
 visible = false
-material = ExtResource( 6 )
+material = ExtResource( 7 )
 position = Vector2( 340, 265 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 vframes = 3
 frame = 2
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Rocket Ship"]
 autoplay = "Flyi in"
@@ -366,15 +377,16 @@ audio_listener_enable_2d = true
 [node name="Page" type="Node2D" parent="."]
 
 [node name="TitleCard" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( -959.89, -270.383 )
 texture = SubResource( 6 )
 
 [node name="Sprite2" type="Sprite" parent="Page/TitleCard"]
-position = Vector2( 479.53, -0.0300293 )
-texture = ExtResource( 9 )
+position = Vector2( 232.53, -6.03003 )
+texture = ExtResource( 10 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/TitleCard"]
-margin_left = -463.0
+margin_left = -947.0
 margin_top = -303.0
 margin_right = 968.0
 margin_bottom = -265.0
@@ -392,9 +404,21 @@ margin_right = 973.594
 margin_bottom = 281.631
 
 [node name="LeftWhite" type="ColorRect" parent="Page/TitleCard"]
-margin_left = -480.0
+margin_left = -493.0
 margin_top = -303.0
-margin_right = -444.0
+margin_right = -457.0
+margin_bottom = 281.0
+
+[node name="LeftWhite3" type="ColorRect" parent="Page/TitleCard"]
+margin_left = -23.0
+margin_top = -303.0
+margin_right = 13.0
+margin_bottom = 281.0
+
+[node name="LeftWhite2" type="ColorRect" parent="Page/TitleCard"]
+margin_left = -969.0
+margin_top = -303.0
+margin_right = -933.0
 margin_bottom = 281.0
 
 [node name="ButtonExit" type="TextureButton" parent="Page/TitleCard"]
@@ -402,19 +426,64 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -298.41
-margin_top = -363.985
-margin_right = -170.41
-margin_bottom = -299.985
+margin_left = -288.41
+margin_top = -803.985
+margin_right = -160.41
+margin_bottom = -739.985
 focus_mode = 1
-texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
-texture_focused = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 12 )
+
+[node name="PurpleIntro2" type="Sprite" parent="Page"]
+editor/display_folded = true
+position = Vector2( -1449.89, 279.617 )
+texture = SubResource( 7 )
+
+[node name="TopWhite" type="ColorRect" parent="Page/PurpleIntro2"]
+margin_left = -463.166
+margin_top = -303.073
+margin_right = 494.834
+margin_bottom = -265.073
+
+[node name="BottomWhite" type="ColorRect" parent="Page/PurpleIntro2"]
+margin_left = -463.0
+margin_top = 247.0
+margin_right = 495.0
+margin_bottom = 281.0
+
+[node name="RightWhite" type="ColorRect" parent="Page/PurpleIntro2"]
+margin_left = 475.594
+margin_top = -303.369
+margin_right = 511.594
+margin_bottom = 281.631
+
+[node name="LeftWhite" type="ColorRect" parent="Page/PurpleIntro2"]
+margin_left = -480.0
+margin_top = -303.369
+margin_right = -444.0
+margin_bottom = 281.631
+
+[node name="LeftWhite2" type="ColorRect" parent="Page/PurpleIntro2"]
+margin_left = -170.0
+margin_top = -303.369
+margin_right = -134.0
+margin_bottom = 281.631
+
+[node name="LeftWhite3" type="ColorRect" parent="Page/PurpleIntro2"]
+margin_left = 130.0
+margin_top = -303.369
+margin_right = 166.0
+margin_bottom = 281.631
 
 [node name="PurpleIntro3" type="Sprite" parent="Page"]
 editor/display_folded = true
-position = Vector2( -499.89, 279.617 )
-texture = SubResource( 7 )
+position = Vector2( -499.89, 278.617 )
+texture = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="Page/PurpleIntro3"]
+position = Vector2( 12.53, -1.03 )
+texture = ExtResource( 14 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/PurpleIntro3"]
 margin_left = -463.166
@@ -440,24 +509,9 @@ margin_top = -303.369
 margin_right = -444.0
 margin_bottom = 281.631
 
-[node name="LeftWhite2" type="ColorRect" parent="Page/PurpleIntro3"]
-margin_left = -170.0
-margin_top = -303.369
-margin_right = -134.0
-margin_bottom = 281.631
-
-[node name="LeftWhite3" type="ColorRect" parent="Page/PurpleIntro3"]
-margin_left = 130.0
-margin_top = -303.369
-margin_right = 166.0
-margin_bottom = 281.631
-
 [node name="Panel1" type="Sprite" parent="Page"]
 position = Vector2( 481.64, 271.587 )
 texture = SubResource( 8 )
-
-[node name="Sprite" type="Sprite" parent="Page/Panel1"]
-texture = ExtResource( 12 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/Panel1"]
 margin_left = -485.265
@@ -488,43 +542,44 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -789.016
-margin_top = -503.244
-margin_right = -533.016
-margin_bottom = -439.244
+margin_left = -803.42
+margin_top = -106.572
+margin_right = -547.42
+margin_bottom = -42.5715
 focus_mode = 1
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 15 )
-texture_focused = ExtResource( 15 )
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+texture_focused = ExtResource( 17 )
 
 [node name="ButtonOptions" type="TextureButton" parent="Page/Panel1"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -782.7
-margin_top = -167.423
-margin_right = -526.7
-margin_bottom = -103.423
+margin_left = -1140.59
+margin_top = 163.876
+margin_right = -884.592
+margin_bottom = 227.876
 focus_mode = 1
-texture_normal = ExtResource( 16 )
-texture_hover = ExtResource( 17 )
-texture_focused = ExtResource( 17 )
+texture_normal = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+texture_focused = ExtResource( 19 )
 
 [node name="ButtonBack" type="TextureButton" parent="Page/Panel1"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1389.94
-margin_top = -375.955
-margin_right = -1261.94
-margin_bottom = -311.955
+margin_left = -1353.38
+margin_top = -373.739
+margin_right = -1225.38
+margin_bottom = -309.739
 focus_mode = 1
-texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
-texture_focused = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 12 )
 
 [node name="Panel2" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( 1425.11, 280.617 )
 texture = SubResource( 9 )
 
@@ -553,6 +608,7 @@ margin_right = -444.0
 margin_bottom = 281.631
 
 [node name="Panel3" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( 480.36, 809.648 )
 texture = SubResource( 10 )
 
@@ -560,7 +616,7 @@ texture = SubResource( 10 )
 material = SubResource( 12 )
 position = Vector2( 3.07574, 258.113 )
 scale = Vector2( 16.1547, 1.52055 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/Panel3"]
 margin_left = -482.211
@@ -594,12 +650,125 @@ margin_top = 18.7518
 margin_right = -947.834
 margin_bottom = 82.7518
 focus_mode = 1
-texture_normal = ExtResource( 16 )
-texture_hover = ExtResource( 17 )
-texture_focused = ExtResource( 17 )
+texture_normal = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+texture_focused = ExtResource( 19 )
+
+[node name="Panel4" type="Sprite" parent="Page"]
+position = Vector2( 1440.36, 809.648 )
+texture = ExtResource( 13 )
+
+[node name="TopWhite" type="ColorRect" parent="Page/Panel4"]
+margin_left = -482.211
+margin_top = -284.028
+margin_right = 475.789
+margin_bottom = -246.028
+
+[node name="BottomWhite" type="ColorRect" parent="Page/Panel4"]
+margin_left = -482.211
+margin_top = 262.31
+margin_right = 475.789
+margin_bottom = 300.31
+
+[node name="RightWhite" type="ColorRect" parent="Page/Panel4"]
+margin_left = 456.549
+margin_top = -284.324
+margin_right = 492.549
+margin_bottom = 300.676
+
+[node name="LeftWhite" type="ColorRect" parent="Page/Panel4"]
+margin_left = -499.045
+margin_top = -284.324
+margin_right = -463.045
+margin_bottom = 300.676
+
+[node name="GemY" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = 74.9573
+margin_top = -48.3284
+margin_right = 275.957
+margin_bottom = -8.32837
+custom_fonts/normal_font = ExtResource( 21 )
+text = "000000"
+
+[node name="Coin" parent="Page/Panel4" instance=ExtResource( 22 )]
+position = Vector2( 39.15, -39.6908 )
+
+[node name="GemB" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = 44.9573
+margin_top = -18.3284
+margin_right = 245.957
+margin_bottom = 21.6716
+custom_fonts/normal_font = ExtResource( 21 )
+text = "000000"
+
+[node name="20gem" parent="Page/Panel4" instance=ExtResource( 23 )]
+position = Vector2( 9.15002, -10.9254 )
+
+[node name="GemG" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = 14.9573
+margin_top = 11.6716
+margin_right = 215.957
+margin_bottom = 51.6716
+custom_fonts/normal_font = ExtResource( 21 )
+text = "000000"
+
+[node name="30gem" parent="Page/Panel4" instance=ExtResource( 24 )]
+position = Vector2( -21.0355, 19.2111 )
+
+[node name="GemR" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = -15.0427
+margin_top = 41.6716
+margin_right = 185.957
+margin_bottom = 81.6716
+custom_fonts/normal_font = ExtResource( 21 )
+text = "000000"
+
+[node name="50gem" parent="Page/Panel4" instance=ExtResource( 25 )]
+position = Vector2( -51.0355, 50.5331 )
+
+[node name="Hearts" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = -45.0427
+margin_top = 74.6716
+margin_right = 155.957
+margin_bottom = 114.672
+custom_fonts/normal_font = ExtResource( 21 )
+text = "000000"
+
+[node name="Heart" parent="Page/Panel4" instance=ExtResource( 26 )]
+position = Vector2( -80.1674, 85.6445 )
+
+[node name="TotalScore" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = 129.03
+margin_top = -131.188
+margin_right = 330.03
+margin_bottom = -91.1876
+custom_fonts/normal_font = ExtResource( 21 )
+text = "000000"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="Page/Panel4"]
+margin_left = -10.9702
+margin_top = -131.188
+margin_right = 190.03
+margin_bottom = -91.1876
+custom_fonts/normal_font = ExtResource( 21 )
+text = "Score"
+
+[node name="Sprite" type="Sprite" parent="Page/Panel4"]
+position = Vector2( -270, -50 )
+texture = ExtResource( 27 )
+
+[node name="Sprite3" type="Sprite" parent="Page/Panel4"]
+position = Vector2( -316.204, -218.823 )
+scale = Vector2( 0.549159, 0.482548 )
+texture = ExtResource( 28 )
+
+[node name="Sprite4" type="Sprite" parent="Page/Panel4"]
+position = Vector2( 209.581, 221.173 )
+scale = Vector2( 0.95006, 0.789562 )
+texture = ExtResource( 29 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 19 )
+stream = ExtResource( 30 )
 autoplay = true
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Rocket Ship/Timer" to="CanvasLayer/Rocket Ship" method="start_hover"]

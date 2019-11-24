@@ -127,8 +127,8 @@ hframes = 9
 [node name="FXLocation" type="Position2D" parent="Sprite"]
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
-visible = false
 scale = Vector2( 0.244141, 0.244141 )
+enabled = false
 texture = ExtResource( 4 )
 color = Color( 0.952941, 0.956863, 0.27451, 1 )
 energy = 0.9

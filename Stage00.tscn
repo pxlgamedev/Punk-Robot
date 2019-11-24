@@ -481,6 +481,7 @@ position = Vector2( 1339.63, 967.879 )
 position = Vector2( 273.892, 1050.19 )
 
 [node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 13 )]
 position = Vector2( 707.665, 1327.05 )
@@ -583,14 +584,15 @@ flightRange = Vector2( -101, 100 )
 fSpeed = 3
 
 [node name="EnemyFlying5" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 2803.06, 422.864 )
-flightRange = Vector2( 200, 100 )
+position = Vector2( 2918.01, 471.314 )
+flightRange = Vector2( -200, -100 )
 
 [node name="EnemyFlying7" parent="Enemies" instance=ExtResource( 14 )]
 position = Vector2( 1090.29, 565.13 )
 flightRange = Vector2( -100, -100 )
 
 [node name="Traps" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Enemy" parent="Traps" instance=ExtResource( 15 )]
 position = Vector2( 956, 1339 )
@@ -686,7 +688,7 @@ volume_db = -5.0
 autoplay = true
 
 [node name="LevelGoal" parent="." instance=ExtResource( 17 )]
-position = Vector2( 6509.96, 1937.68 )
+position = Vector2( 6484.18, 1956.07 )
 
 [node name="ParallaxBg" parent="." instance=ExtResource( 18 )]
 layer = -2

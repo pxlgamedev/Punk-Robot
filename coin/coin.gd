@@ -7,8 +7,8 @@ export var value = "Score" # Score, Health, FireRate, AmmoBounce
 export var points = 10
 export var effect = preload("res://Effects/POINT10.tscn")
 
-func _ready():
-	$Sprite/Light2D.enabled = false
+#func _ready():
+	#$Sprite/Light2D.enabled = false
 
 func _on_coin_body_enter(body):
 	if not taken and body is Player:
@@ -20,8 +20,18 @@ func _on_coin_body_enter(body):
 		taken = true
 		if value == "Score":
 			User_Data.store.score += points
+			if points == 10:
+				User_Data.store.gemY += 1
+			if points == 20:
+				User_Data.store.gemB += 1
+			if points == 30:
+				User_Data.store.gemG += 1
+			if points == 50:
+				User_Data.store.gemR += 1
 		if value == "Health":
 			body.contact(points)
+			if points == 1:
+				User_Data.store.hearts += 1
 		if value == "FireRate":
 			User_Data.store.rate -= 0.01
 		if value == "AmmoBounce":

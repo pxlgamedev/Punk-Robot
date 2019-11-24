@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/PunkRobotSprite.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://player/osb_right.png" type="Texture" id=4]
 [ext_resource path="res://player/osb_jump.png" type="Texture" id=5]
 [ext_resource path="res://player/osb_fire.png" type="Texture" id=6]
-[ext_resource path="res://Crashed Scoreboard.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://BitFont.tres" type="DynamicFont" id=7]
 [ext_resource path="res://player/Heart.tscn" type="PackedScene" id=8]
 [ext_resource path="res://player/light.png" type="Texture" id=9]
 
@@ -187,15 +187,7 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=13]
 height = 35.0854
 
-[sub_resource type="DynamicFont" id=14]
-size = 20
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=15]
-size = 32
-font_data = ExtResource( 7 )
-
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:self_modulate")
 tracks/0/interp = 1
@@ -209,7 +201,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.776471, 0.305882, 0.305882, 1 ), Color( 1, 1, 1, 1 ), Color( 0.713726, 0.27451, 0.27451, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=17]
+[sub_resource type="CapsuleShape2D" id=16]
 radius = 25.4401
 
 [node name="Player" type="KinematicBody2D"]
@@ -257,7 +249,6 @@ position = Vector2( 0.291992, 1.78734 )
 shape = SubResource( 13 )
 
 [node name="UI" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 0
 
 [node name="Left" type="TouchScreenButton" parent="UI"]
@@ -291,11 +282,11 @@ action = "shoot"
 visibility_mode = 1
 
 [node name="Ammo" type="RichTextLabel" parent="UI"]
-margin_left = 835.301
-margin_top = 487.117
-margin_right = 944.301
-margin_bottom = 511.117
-custom_fonts/normal_font = SubResource( 14 )
+margin_left = 762.0
+margin_top = 487.0
+margin_right = 944.0
+margin_bottom = 511.0
+custom_fonts/normal_font = ExtResource( 7 )
 text = "10"
 scroll_active = false
 
@@ -305,7 +296,7 @@ margin_left = 324.641
 margin_top = 15.3677
 margin_right = 432.641
 margin_bottom = 59.3677
-custom_fonts/normal_font = SubResource( 15 )
+custom_fonts/normal_font = ExtResource( 7 )
 text = "Score"
 scroll_active = false
 
@@ -315,15 +306,15 @@ margin_left = 436.18
 margin_top = 15.035
 margin_right = 738.18
 margin_bottom = 58.035
-custom_fonts/normal_font = SubResource( 15 )
+custom_fonts/normal_font = ExtResource( 7 )
 text = "10"
 scroll_active = false
 
 [node name="Current_Gun" type="RichTextLabel" parent="UI"]
-margin_left = 747.922
-margin_top = 491.037
-margin_right = 820.922
-margin_bottom = 516.037
+margin_left = 657.0
+margin_top = 487.0
+margin_right = 821.0
+margin_bottom = 516.0
 text = "10"
 
 [node name="Heart 01" parent="UI" instance=ExtResource( 8 )]
@@ -354,11 +345,11 @@ shadow_gradient_length = 2.0
 shadow_filter_smooth = 3.9
 
 [node name="SecondAnim" type="AnimationPlayer" parent="."]
-anims/hurt = SubResource( 16 )
+anims/hurt = SubResource( 15 )
 
 [node name="isplayer" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="isplayer"]
 visible = false
-shape = SubResource( 17 )
+shape = SubResource( 16 )

@@ -46,9 +46,10 @@ func _ready():
 		state = STATE_KILLED
 
 func patrol(target):
-	tween.stop_all()
-	tween.interpolate_property(self, "position", null, target, fSpeed, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	tween.start()
+	if state != STATE_KILLED:
+		tween.stop_all()
+		tween.interpolate_property(self, "position", null, target, fSpeed, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		tween.start()
 
 func _physics_process(delta):
 	var new_anim = "idle"
@@ -56,8 +57,6 @@ func _physics_process(delta):
 		$CollisionShape2D.disabled = true
 		$DamageRange.monitoring = false
 		new_anim = "explode"
-		if $Tween:
-			tween.stop_all()
 	var target = spawnPoint
 	target += flightRange
 	if state == STATE_WALKING:
@@ -76,21 +75,21 @@ func _physics_process(delta):
 			direction = -1.0
 	if state == STATE_FLYING: 
 		if DetectFloorLeft.is_colliding() or DetectWallLeft.is_colliding():
-			print("hit left wall")
 			patrol(spawnPoint)
 			state = STATE_RETURNING
 	if state == STATE_RETURNING:
 		if DetectFloorRight.is_colliding() or DetectWallRight.is_colliding():
-			print("hit right wall")
 			patrol(target)
 			state = STATE_FLYING
 
 	if state == STATE_FLYING:
+		new_anim = "walk"
 		direction = -1.0
 		if self.position == spawnPoint + flightRange:
 			patrol(spawnPoint)
 			state = STATE_RETURNING
 	if state == STATE_RETURNING:
+		new_anim = "walk"
 		direction = 1.0
 		if self.position.x == spawnPoint.x:
 			state = STATE_WALKING
@@ -128,12 +127,14 @@ func _on_Spawner_screen_entered():
 	if staticStart and state == STATE_KILLED:
 		state = STATE_WALKING
 
-
 func _on_Spawner_screen_exited():
 	pass # Replace with function body.
 	
 func dead():
 	if !respawn:
-		queue_free()
+		state = STATE_KILLED
+		tween.stop_all()
+		call_deferred("queue_free")
 	if respawn:
+		state = STATE_KILLED
 		self.position = spawnPoint

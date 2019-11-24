@@ -103,9 +103,9 @@ frame = 3
 [node name="FXLocation" type="Position2D" parent="Sprite"]
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
-visible = false
 position = Vector2( 3.8147e-006, -3.8147e-006 )
 scale = Vector2( 0.253906, 0.253906 )
+enabled = false
 texture = ExtResource( 5 )
 color = Color( 0.819608, 0.745098, 0.145098, 1 )
 energy = 0.5

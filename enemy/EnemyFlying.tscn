@@ -2,11 +2,11 @@
 
 [ext_resource path="res://enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://MatShadow.tres" type="Material" id=2]
-[ext_resource path="res://enemy/walker.png" type="Texture" id=3]
+[ext_resource path="res://enemy/FlyingBot.png" type="Texture" id=3]
 [ext_resource path="res://Audio/Robot04wav.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.6935, 19.1017 )
+extents = Vector2( 22.4357, 24.7935 )
 
 [sub_resource type="Animation" id=2]
 length = 2.0
@@ -92,9 +92,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-length = 1.25
+length = 1.5
 loop = true
-step = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -102,10 +101,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 0 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:self_modulate")
@@ -149,6 +148,7 @@ flying = true
 shape = SubResource( 1 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
 anims/explode = SubResource( 2 )
 anims/idle = SubResource( 3 )
 anims/walk = SubResource( 4 )

@@ -8,12 +8,18 @@ extends Node
 # access them from anywhere with User_Data.store.[YourVariable]
 # we can also back up the entire dictionary in one go
 
-var playerPos = Vector2(0,0)
+## Some neat tricks for later ##
+# Engine.time_scale = 0.1
 
 var store = {
 	# you can add as many variables as you want here, they will all be saved
 	level = 1,
 	score = 0,
+	gemY = 0,
+	gemB = 0,
+	gemG = 0,
+	gemR = 0,
+	hearts = 0,
 	health = 5,
 	maxHealth = 5,
 	lives = 3,
