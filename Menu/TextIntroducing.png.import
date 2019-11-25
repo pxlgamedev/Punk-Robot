@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonNewGameBlue.png-5b272d3a26cbb8a22dba5095faa3fc49.stex"
+path="res://.import/TextIntroducing.png-2be8e78cbb7b21a5c74aa682c68a55b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/ButtonNewGameBlue.png"
-dest_files=[ "res://.import/ButtonNewGameBlue.png-5b272d3a26cbb8a22dba5095faa3fc49.stex" ]
+source_file="res://Menu/TextIntroducing.png"
+dest_files=[ "res://.import/TextIntroducing.png-2be8e78cbb7b21a5c74aa682c68a55b7.stex" ]
 
 [params]
 

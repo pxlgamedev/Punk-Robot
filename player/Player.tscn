@@ -187,7 +187,7 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=13]
 height = 35.0854
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:self_modulate")
 tracks/0/interp = 1
@@ -201,7 +201,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.776471, 0.305882, 0.305882, 1 ), Color( 1, 1, 1, 1 ), Color( 0.713726, 0.27451, 0.27451, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=16]
+[sub_resource type="CapsuleShape2D" id=15]
 radius = 25.4401
 
 [node name="Player" type="KinematicBody2D"]
@@ -281,31 +281,22 @@ normal = ExtResource( 6 )
 action = "shoot"
 visibility_mode = 1
 
-[node name="Ammo" type="RichTextLabel" parent="UI"]
-margin_left = 762.0
-margin_top = 487.0
-margin_right = 944.0
-margin_bottom = 511.0
-custom_fonts/normal_font = ExtResource( 7 )
-text = "10"
-scroll_active = false
-
 [node name="ScoreCard" type="RichTextLabel" parent="UI"]
 light_mask = 0
-margin_left = 324.641
-margin_top = 15.3677
-margin_right = 432.641
-margin_bottom = 59.3677
+margin_left = 364.641
+margin_top = 9.3677
+margin_right = 472.641
+margin_bottom = 53.3677
 custom_fonts/normal_font = ExtResource( 7 )
-text = "Score"
+text = "Score:"
 scroll_active = false
 
 [node name="Score" type="RichTextLabel" parent="UI"]
 light_mask = 0
-margin_left = 436.18
-margin_top = 15.035
-margin_right = 738.18
-margin_bottom = 58.035
+margin_left = 463.18
+margin_top = 10.035
+margin_right = 765.18
+margin_bottom = 53.035
 custom_fonts/normal_font = ExtResource( 7 )
 text = "10"
 scroll_active = false
@@ -316,6 +307,15 @@ margin_top = 487.0
 margin_right = 821.0
 margin_bottom = 516.0
 text = "10"
+
+[node name="Ammo" type="RichTextLabel" parent="UI"]
+margin_left = 762.0
+margin_top = 471.0
+margin_right = 944.0
+margin_bottom = 520.0
+custom_fonts/normal_font = ExtResource( 7 )
+text = "10"
+scroll_active = false
 
 [node name="Heart 01" parent="UI" instance=ExtResource( 8 )]
 position = Vector2( 919.16, 39.3065 )
@@ -345,11 +345,11 @@ shadow_gradient_length = 2.0
 shadow_filter_smooth = 3.9
 
 [node name="SecondAnim" type="AnimationPlayer" parent="."]
-anims/hurt = SubResource( 15 )
+anims/hurt = SubResource( 14 )
 
 [node name="isplayer" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="isplayer"]
 visible = false
-shape = SubResource( 16 )
+shape = SubResource( 15 )

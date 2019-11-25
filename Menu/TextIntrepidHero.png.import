@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonOptionsBlue.png-a93f55d1da6411df7035efc7438d8d09.stex"
+path="res://.import/TextIntrepidHero.png-14124ad3f829f1b7a468cccd35e687e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/ButtonOptionsBlue.png"
-dest_files=[ "res://.import/ButtonOptionsBlue.png-a93f55d1da6411df7035efc7438d8d09.stex" ]
+source_file="res://Menu/TextIntrepidHero.png"
+dest_files=[ "res://.import/TextIntrepidHero.png-14124ad3f829f1b7a468cccd35e687e6.stex" ]
 
 [params]
 

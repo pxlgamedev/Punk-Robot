@@ -57,16 +57,9 @@ func contact(dam): # when an enemy comes in contact
 	if hittimer > 0.5: # set an invulnerable time here
 		User_Data.store.health += dam
 		if dam > 0:
-			add_health()
+			checkhealth = true
 		if dam < 0:
 			gethit = true # track the hit
-
-func add_health():
-	if User_Data.store.health > User_Data.store.maxHealth:
-			User_Data.store.health = User_Data.store.maxHealth
-			print("too much health")
-			User_Data.store.score += 100
-	checkhealth = true
 
 func _physics_process(delta):
 	# Increment counters
@@ -124,6 +117,10 @@ func _physics_process(delta):
 		checkhealth = false
 		if User_Data.store.health < 1:
 			Game_Over() # end the game when we are out of health
+		if User_Data.store.health > User_Data.store.maxHealth:
+			User_Data.store.health = User_Data.store.maxHealth
+			print("too much health")
+			#User_Data.store.score += 100
 
 	### MOVEMENT ###
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonNewGameYellow.png-ce9fbe88a09c6ffe230fd8e44ba537b6.stex"
+path="res://.import/Controls.png-6330f53c56cf77cbb75acd020bae0618.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/ButtonNewGameYellow.png"
-dest_files=[ "res://.import/ButtonNewGameYellow.png-ce9fbe88a09c6ffe230fd8e44ba537b6.stex" ]
+source_file="res://Menu/Controls.png"
+dest_files=[ "res://.import/Controls.png-6330f53c56cf77cbb75acd020bae0618.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PunkRobotMainTitle.png-2cd227277e0808e86a4c9e6be5f24844.stex"
+path="res://.import/ButtonMediumWhite.png-6449a84863147861cdf3c9065f602b06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/PunkRobotMainTitle.png"
-dest_files=[ "res://.import/PunkRobotMainTitle.png-2cd227277e0808e86a4c9e6be5f24844.stex" ]
+source_file="res://Menu/ButtonMediumWhite.png"
+dest_files=[ "res://.import/ButtonMediumWhite.png-6449a84863147861cdf3c9065f602b06.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PunkRobotMainTitle.png-2cd227277e0808e86a4c9e6be5f24844.stex"
+path="res://.import/PxLgamedevLOGO.png-7226a474e21b54975dd7a9099e72cc8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/PunkRobotMainTitle.png"
-dest_files=[ "res://.import/PunkRobotMainTitle.png-2cd227277e0808e86a4c9e6be5f24844.stex" ]
+source_file="res://PxLgamedevLOGO.png"
+dest_files=[ "res://.import/PxLgamedevLOGO.png-7226a474e21b54975dd7a9099e72cc8d.stex" ]
 
 [params]
 

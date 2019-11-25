@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://background/Galaxy.tscn" type="PackedScene" id=2]
@@ -9,27 +9,38 @@
 [ext_resource path="res://MatShadow.tres" type="Material" id=7]
 [ext_resource path="res://Menu/RocketShip.png" type="Texture" id=8]
 [ext_resource path="res://Rocket Ship.gd" type="Script" id=9]
-[ext_resource path="res://Menu/PunkRobotMainTitle.png" type="Texture" id=10]
-[ext_resource path="res://Menu/ButtonExitGreen.png" type="Texture" id=11]
-[ext_resource path="res://Menu/ButtonExitBlue.png" type="Texture" id=12]
-[ext_resource path="res://background/Stars02.png" type="Texture" id=13]
-[ext_resource path="res://Menu/TerrorPurple.png" type="Texture" id=14]
-[ext_resource path="res://Menu/ButtonNewGameGreen.png" type="Texture" id=15]
-[ext_resource path="res://Menu/ButtonNewGameWhite.png" type="Texture" id=16]
-[ext_resource path="res://Menu/ButtonNewGameBlue.png" type="Texture" id=17]
-[ext_resource path="res://Menu/ButtonOptionsGreen.png" type="Texture" id=18]
-[ext_resource path="res://Menu/ButtonOptionsBlue.png" type="Texture" id=19]
-[ext_resource path="res://BlankSquare.png" type="Texture" id=20]
-[ext_resource path="res://BitFont.tres" type="DynamicFont" id=21]
-[ext_resource path="res://coin/Coin10.tscn" type="PackedScene" id=22]
-[ext_resource path="res://coin/Coin20.tscn" type="PackedScene" id=23]
-[ext_resource path="res://coin/Coin30.tscn" type="PackedScene" id=24]
-[ext_resource path="res://coin/Coin50.tscn" type="PackedScene" id=25]
-[ext_resource path="res://coin/HeartPickup.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Menu/PunkRobotSmall.png" type="Texture" id=27]
-[ext_resource path="res://Menu/TextChapComp.png" type="Texture" id=28]
-[ext_resource path="res://Menu/TextChapNext1.png" type="Texture" id=29]
-[ext_resource path="res://Audio/ArcadeNeptune.wav" type="AudioStream" id=30]
+[ext_resource path="res://MadeInGodot.png" type="Texture" id=10]
+[ext_resource path="res://PxLgamedevGame.png" type="Texture" id=11]
+[ext_resource path="res://Menu/TextIntroducing.png" type="Texture" id=12]
+[ext_resource path="res://Menu/NextButton.png" type="Texture" id=13]
+[ext_resource path="res://Menu/PunkRobotMainTitle.png" type="Texture" id=14]
+[ext_resource path="res://Menu/IssueNum.png" type="Texture" id=15]
+[ext_resource path="res://PxLgamedevLOGO2.png" type="Texture" id=16]
+[ext_resource path="res://Menu/ButtonExitWhite.png" type="Texture" id=17]
+[ext_resource path="res://Menu/TextIntrepidHero.png" type="Texture" id=18]
+[ext_resource path="res://Menu/TextFarReaches.png" type="Texture" id=19]
+[ext_resource path="res://Menu/TextDiscovers.png" type="Texture" id=20]
+[ext_resource path="res://background/Stars02.png" type="Texture" id=21]
+[ext_resource path="res://Menu/TerrorPurple.png" type="Texture" id=22]
+[ext_resource path="res://Menu/ButtonReturnWhite.png" type="Texture" id=23]
+[ext_resource path="res://Menu/Controls.png" type="Texture" id=24]
+[ext_resource path="res://Menu/ButtonEasyWhite.png" type="Texture" id=25]
+[ext_resource path="res://Menu/ButtonMediumWhite.png" type="Texture" id=26]
+[ext_resource path="res://Menu/ButtonImpossibleWhite.png" type="Texture" id=27]
+[ext_resource path="res://Menu/ButtonOptionsWhite.png" type="Texture" id=28]
+[ext_resource path="res://Menu/ButtonControlsWhite.png" type="Texture" id=29]
+[ext_resource path="res://BlankSquare.png" type="Texture" id=30]
+[ext_resource path="res://BitFontNum.tres" type="DynamicFont" id=31]
+[ext_resource path="res://coin/Coin10.tscn" type="PackedScene" id=32]
+[ext_resource path="res://coin/Coin20.tscn" type="PackedScene" id=33]
+[ext_resource path="res://coin/Coin30.tscn" type="PackedScene" id=34]
+[ext_resource path="res://coin/Coin50.tscn" type="PackedScene" id=35]
+[ext_resource path="res://coin/HeartPickup.tscn" type="PackedScene" id=36]
+[ext_resource path="res://BitFont.tres" type="DynamicFont" id=37]
+[ext_resource path="res://Menu/PunkRobotSmall.png" type="Texture" id=38]
+[ext_resource path="res://Menu/TextChapComp.png" type="Texture" id=39]
+[ext_resource path="res://Menu/TextChapNext1.png" type="Texture" id=40]
+[ext_resource path="res://Audio/ArcadeNeptune.wav" type="AudioStream" id=41]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BackToMain"
@@ -283,7 +294,6 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="BgLayer" type="ViewportContainer" parent="."]
-editor/display_folded = true
 focus_mode = 1
 
 [node name="Title" type="Viewport" parent="BgLayer"]
@@ -329,7 +339,6 @@ anims/BackToMain = SubResource( 1 )
 anims/ChangePanel = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Effect" type="Sprite" parent="CanvasLayer"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -377,13 +386,41 @@ audio_listener_enable_2d = true
 [node name="Page" type="Node2D" parent="."]
 
 [node name="TitleCard" type="Sprite" parent="Page"]
-editor/display_folded = true
 position = Vector2( -959.89, -270.383 )
 texture = SubResource( 6 )
 
-[node name="Sprite2" type="Sprite" parent="Page/TitleCard"]
-position = Vector2( 232.53, -6.03003 )
+[node name="MadeInGodot" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( -833.523, -229.486 )
 texture = ExtResource( 10 )
+
+[node name="PxLgamedevLOGO" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( -705.41, 140.06 )
+texture = ExtResource( 11 )
+
+[node name="Introducing" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( -190.575, -235.567 )
+texture = ExtResource( 12 )
+
+[node name="Next1" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( -120.005, 208.186 )
+texture = ExtResource( 13 )
+
+[node name="MainTitle" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( 470.896, -73.39 )
+texture = ExtResource( 14 )
+
+[node name="IssueNum" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( 891.22, -220.033 )
+texture = ExtResource( 15 )
+
+[node name="PxLgamedevAproved" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( 899.035, -143.696 )
+scale = Vector2( 0.364042, 0.377199 )
+texture = ExtResource( 16 )
+
+[node name="Next2" type="Sprite" parent="Page/TitleCard"]
+position = Vector2( 841.244, 206.679 )
+texture = ExtResource( 13 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/TitleCard"]
 margin_left = -947.0
@@ -426,17 +463,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -288.41
-margin_top = -803.985
-margin_right = -160.41
-margin_bottom = -739.985
+margin_left = -1914.57
+margin_top = -364.412
+margin_right = -1706.57
+margin_bottom = -300.412
 focus_mode = 1
-texture_normal = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-texture_focused = ExtResource( 12 )
+texture_normal = ExtResource( 17 )
 
 [node name="PurpleIntro2" type="Sprite" parent="Page"]
-editor/display_folded = true
 position = Vector2( -1449.89, 279.617 )
 texture = SubResource( 7 )
 
@@ -476,14 +510,34 @@ margin_top = -303.369
 margin_right = 166.0
 margin_bottom = 281.631
 
+[node name="Sprite" type="Sprite" parent="Page/PurpleIntro2"]
+position = Vector2( -316.334, -243.39 )
+scale = Vector2( 0.500989, 0.5 )
+texture = ExtResource( 18 )
+
+[node name="Sprite4" type="Sprite" parent="Page/PurpleIntro2"]
+position = Vector2( -1.4624, -122.657 )
+scale = Vector2( 0.481589, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="Sprite3" type="Sprite" parent="Page/PurpleIntro2"]
+position = Vector2( 370.825, 139.445 )
+scale = Vector2( 0.53, 0.5 )
+texture = ExtResource( 20 )
+
+[node name="Sprite2" type="Sprite" parent="Page/PurpleIntro2"]
+position = Vector2( 390.954, 207.838 )
+scale = Vector2( 0.809979, 1.02855 )
+texture = ExtResource( 13 )
+
 [node name="PurpleIntro3" type="Sprite" parent="Page"]
 editor/display_folded = true
 position = Vector2( -499.89, 278.617 )
-texture = ExtResource( 13 )
+texture = ExtResource( 21 )
 
 [node name="Sprite" type="Sprite" parent="Page/PurpleIntro3"]
 position = Vector2( 12.53, -1.03 )
-texture = ExtResource( 14 )
+texture = ExtResource( 22 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/PurpleIntro3"]
 margin_left = -463.166
@@ -508,6 +562,47 @@ margin_left = -480.0
 margin_top = -303.369
 margin_right = -444.0
 margin_bottom = 281.631
+
+[node name="Panel0" type="Sprite" parent="Page"]
+editor/display_folded = true
+position = Vector2( 480.36, -286.352 )
+texture = ExtResource( 21 )
+
+[node name="TopWhite" type="ColorRect" parent="Page/Panel0"]
+margin_left = -482.211
+margin_top = -284.028
+margin_right = 475.789
+margin_bottom = -246.028
+
+[node name="BottomWhite" type="ColorRect" parent="Page/Panel0"]
+margin_left = -482.211
+margin_top = 262.31
+margin_right = 475.789
+margin_bottom = 300.31
+
+[node name="RightWhite" type="ColorRect" parent="Page/Panel0"]
+margin_left = 456.549
+margin_top = -284.324
+margin_right = 492.549
+margin_bottom = 300.676
+
+[node name="LeftWhite" type="ColorRect" parent="Page/Panel0"]
+margin_left = -499.045
+margin_top = -284.324
+margin_right = -463.045
+margin_bottom = 300.676
+
+[node name="ButtonReturn" type="TextureButton" parent="Page/Panel0"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -824.792
+margin_top = 191.139
+margin_right = -626.792
+margin_bottom = 256.139
+texture_normal = ExtResource( 23 )
+
+[node name="Sprite" type="Sprite" parent="Page/Panel0"]
+texture = ExtResource( 24 )
 
 [node name="Panel1" type="Sprite" parent="Page"]
 position = Vector2( 481.64, 271.587 )
@@ -537,46 +632,70 @@ margin_top = -294.775
 margin_right = -466.099
 margin_bottom = 290.225
 
-[node name="ButtonNewGame" type="TextureButton" parent="Page/Panel1"]
+[node name="ButtonEasy" type="TextureButton" parent="Page/Panel1"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -803.42
-margin_top = -106.572
-margin_right = -547.42
-margin_bottom = -42.5715
+margin_left = -903.36
+margin_top = -355.33
+margin_right = -676.36
+margin_bottom = -297.33
 focus_mode = 1
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 16 )
-texture_hover = ExtResource( 17 )
-texture_focused = ExtResource( 17 )
+texture_normal = ExtResource( 25 )
+
+[node name="ButtonMedium" type="TextureButton" parent="Page/Panel1"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -888.266
+margin_top = -320.268
+margin_right = -501.266
+margin_bottom = -210.268
+texture_normal = ExtResource( 26 )
+
+[node name="ButtonHard" type="TextureButton" parent="Page/Panel1"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -806.851
+margin_top = -214.902
+margin_right = -579.851
+margin_bottom = -156.902
+texture_normal = ExtResource( 27 )
 
 [node name="ButtonOptions" type="TextureButton" parent="Page/Panel1"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -1140.59
-margin_top = 163.876
-margin_right = -884.592
-margin_bottom = 227.876
+margin_left = -1443.78
+margin_top = 123.956
+margin_right = -1216.78
+margin_bottom = 181.956
 focus_mode = 1
-texture_normal = ExtResource( 18 )
-texture_hover = ExtResource( 19 )
-texture_focused = ExtResource( 19 )
+texture_normal = ExtResource( 28 )
+
+[node name="ButtonControls" type="TextureButton" parent="Page/Panel1"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1427.49
+margin_top = -242.317
+margin_right = -1200.49
+margin_bottom = -179.317
+texture_normal = ExtResource( 29 )
 
 [node name="ButtonBack" type="TextureButton" parent="Page/Panel1"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1353.38
-margin_top = -373.739
-margin_right = -1225.38
-margin_bottom = -309.739
+margin_left = -1427.94
+margin_top = -349.033
+margin_right = -1203.94
+margin_bottom = -285.033
 focus_mode = 1
-texture_normal = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-texture_focused = ExtResource( 12 )
+texture_normal = ExtResource( 17 )
 
 [node name="Panel2" type="Sprite" parent="Page"]
 editor/display_folded = true
@@ -616,7 +735,7 @@ texture = SubResource( 10 )
 material = SubResource( 12 )
 position = Vector2( 3.07574, 258.113 )
 scale = Vector2( 16.1547, 1.52055 )
-texture = ExtResource( 20 )
+texture = ExtResource( 30 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/Panel3"]
 margin_left = -482.211
@@ -645,18 +764,17 @@ margin_bottom = 300.676
 [node name="ButtonReturn" type="TextureButton" parent="Page/Panel3"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -1203.83
-margin_top = 18.7518
-margin_right = -947.834
-margin_bottom = 82.7518
+margin_left = -1379.46
+margin_top = 175.885
+margin_right = -1185.46
+margin_bottom = 239.885
 focus_mode = 1
-texture_normal = ExtResource( 18 )
-texture_hover = ExtResource( 19 )
-texture_focused = ExtResource( 19 )
+texture_normal = ExtResource( 23 )
 
 [node name="Panel4" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( 1440.36, 809.648 )
-texture = ExtResource( 13 )
+texture = ExtResource( 21 )
 
 [node name="TopWhite" type="ColorRect" parent="Page/Panel4"]
 margin_left = -482.211
@@ -683,97 +801,101 @@ margin_right = -463.045
 margin_bottom = 300.676
 
 [node name="GemY" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = 74.9573
-margin_top = -48.3284
-margin_right = 275.957
-margin_bottom = -8.32837
-custom_fonts/normal_font = ExtResource( 21 )
+margin_left = 145.0
+margin_top = -42.0
+margin_right = 346.0
+margin_bottom = -1.0
+custom_fonts/normal_font = ExtResource( 31 )
 text = "000000"
 
-[node name="Coin" parent="Page/Panel4" instance=ExtResource( 22 )]
-position = Vector2( 39.15, -39.6908 )
+[node name="Coin" parent="Page/Panel4" instance=ExtResource( 32 )]
+position = Vector2( 109.15, -29.6908 )
 
 [node name="GemB" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = 44.9573
-margin_top = -18.3284
-margin_right = 245.957
-margin_bottom = 21.6716
-custom_fonts/normal_font = ExtResource( 21 )
+margin_left = 115.0
+margin_top = -11.0
+margin_right = 316.0
+margin_bottom = 29.0
+custom_fonts/normal_font = ExtResource( 31 )
 text = "000000"
 
-[node name="20gem" parent="Page/Panel4" instance=ExtResource( 23 )]
-position = Vector2( 9.15002, -10.9254 )
+[node name="20gem" parent="Page/Panel4" instance=ExtResource( 33 )]
+position = Vector2( 79.15, -0.9254 )
 
 [node name="GemG" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = 14.9573
-margin_top = 11.6716
-margin_right = 215.957
-margin_bottom = 51.6716
-custom_fonts/normal_font = ExtResource( 21 )
+margin_left = 85.0
+margin_top = 18.0
+margin_right = 286.0
+margin_bottom = 59.0
+custom_fonts/normal_font = ExtResource( 31 )
 text = "000000"
 
-[node name="30gem" parent="Page/Panel4" instance=ExtResource( 24 )]
-position = Vector2( -21.0355, 19.2111 )
+[node name="30gem" parent="Page/Panel4" instance=ExtResource( 34 )]
+position = Vector2( 48.9645, 29.2111 )
 
 [node name="GemR" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = -15.0427
-margin_top = 41.6716
-margin_right = 185.957
-margin_bottom = 81.6716
-custom_fonts/normal_font = ExtResource( 21 )
+margin_left = 55.0
+margin_top = 48.0
+margin_right = 256.0
+margin_bottom = 89.0
+custom_fonts/normal_font = ExtResource( 31 )
 text = "000000"
 
-[node name="50gem" parent="Page/Panel4" instance=ExtResource( 25 )]
-position = Vector2( -51.0355, 50.5331 )
+[node name="50gem" parent="Page/Panel4" instance=ExtResource( 35 )]
+position = Vector2( 18.9645, 60.5331 )
 
 [node name="Hearts" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = -45.0427
-margin_top = 74.6716
-margin_right = 155.957
-margin_bottom = 114.672
-custom_fonts/normal_font = ExtResource( 21 )
+margin_left = 25.0
+margin_top = 84.0
+margin_right = 226.0
+margin_bottom = 124.0
+custom_fonts/normal_font = ExtResource( 31 )
 text = "000000"
 
-[node name="Heart" parent="Page/Panel4" instance=ExtResource( 26 )]
-position = Vector2( -80.1674, 85.6445 )
+[node name="Heart" parent="Page/Panel4" instance=ExtResource( 36 )]
+position = Vector2( -10.1674, 95.6445 )
 
 [node name="TotalScore" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = 129.03
-margin_top = -131.188
-margin_right = 330.03
-margin_bottom = -91.1876
-custom_fonts/normal_font = ExtResource( 21 )
+margin_left = 229.0
+margin_top = -123.0
+margin_right = 430.0
+margin_bottom = -83.0
+custom_fonts/normal_font = ExtResource( 31 )
 text = "000000"
 
 [node name="ScoreLabel" type="RichTextLabel" parent="Page/Panel4"]
-margin_left = -10.9702
-margin_top = -131.188
-margin_right = 190.03
-margin_bottom = -91.1876
-custom_fonts/normal_font = ExtResource( 21 )
-text = "Score"
+margin_left = 20.5823
+margin_top = -132.656
+margin_right = 221.582
+margin_bottom = -77.6556
+custom_fonts/normal_font = ExtResource( 37 )
+text = "Total Score:"
 
 [node name="Sprite" type="Sprite" parent="Page/Panel4"]
 position = Vector2( -270, -50 )
-texture = ExtResource( 27 )
+texture = ExtResource( 38 )
 
 [node name="Sprite3" type="Sprite" parent="Page/Panel4"]
 position = Vector2( -316.204, -218.823 )
 scale = Vector2( 0.549159, 0.482548 )
-texture = ExtResource( 28 )
+texture = ExtResource( 39 )
 
 [node name="Sprite4" type="Sprite" parent="Page/Panel4"]
 position = Vector2( 209.581, 221.173 )
 scale = Vector2( 0.95006, 0.789562 )
-texture = ExtResource( 29 )
+texture = ExtResource( 40 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 30 )
+stream = ExtResource( 41 )
 autoplay = true
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Rocket Ship/Timer" to="CanvasLayer/Rocket Ship" method="start_hover"]
 [connection signal="pressed" from="Page/TitleCard/ButtonExit" to="." method="exit_button"]
-[connection signal="pressed" from="Page/Panel1/ButtonNewGame" to="." method="_world_one_start"]
+[connection signal="pressed" from="Page/Panel0/ButtonReturn" to="." method="return_to_main"]
+[connection signal="pressed" from="Page/Panel1/ButtonEasy" to="." method="_easy_start"]
+[connection signal="pressed" from="Page/Panel1/ButtonMedium" to="." method="_med_start"]
+[connection signal="pressed" from="Page/Panel1/ButtonHard" to="." method="_hard_start"]
 [connection signal="pressed" from="Page/Panel1/ButtonOptions" to="." method="options"]
+[connection signal="pressed" from="Page/Panel1/ButtonControls" to="." method="controls"]
 [connection signal="pressed" from="Page/Panel1/ButtonBack" to="." method="back_to_title_button"]
 [connection signal="pressed" from="Page/Panel3/ButtonReturn" to="." method="return_to_main"]

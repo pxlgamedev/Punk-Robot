@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonExitGreen.png-c39cad354d91db6c9c147aa85be35bf2.stex"
+path="res://.import/MadeInGodot.png-a911c47e6c0ccc97bf8b3085a3b4f5c2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/ButtonExitGreen.png"
-dest_files=[ "res://.import/ButtonExitGreen.png-c39cad354d91db6c9c147aa85be35bf2.stex" ]
+source_file="res://MadeInGodot.png"
+dest_files=[ "res://.import/MadeInGodot.png-a911c47e6c0ccc97bf8b3085a3b4f5c2.stex" ]
 
 [params]
 

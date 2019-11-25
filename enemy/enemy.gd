@@ -3,10 +3,9 @@ extends KinematicBody2D
 class_name Enemy
 
 export var staticStart = true # if true the enemy won't be active until they enter the camera
-export var respawn = false # if true the enemy will respawn when entering the camera
-
 export var attack = false
 export var attackDelay = 1
+export var isHardOnly = false
 
 export var flying = false
 export var flightRange = Vector2(-300,0)
@@ -23,14 +22,17 @@ const STATE_RETURNING = 3
 
 # state machine
 var state = STATE_WALKING
-
+var respawn = false # if true the enemy will respawn when entering the camera
 var spawnPoint = Vector2(0,0) # for storing this enemy's starting position
+
 var linear_velocity = Vector2()
 var direction = -1
 var anim = ""
 
 var fxboom = preload("res://Effects/FXBoom.tscn")
 var fxpoint = preload("res://Effects/POINT30.tscn")
+
+var givePoints = true
 
 onready var tween = $Tween
 
@@ -44,6 +46,12 @@ func _ready():
 	spawnPoint = self.position # store the initial position
 	if staticStart == true: # if we want enemy positions to be dynamic, set false
 		state = STATE_KILLED
+	if isHardOnly and User_Data.curVars.difficulty == 1:
+		self.call_deferred("queue_free")
+	if User_Data.curVars.difficulty == 1:
+		respawn = false
+	if User_Data.curVars.difficulty == 3:
+		staticStart = false
 
 func patrol(target):
 	if state != STATE_KILLED:
@@ -101,7 +109,6 @@ func _physics_process(delta):
 
 func hit_by_bullet():
 	if state != STATE_KILLED:
-		User_Data.store.score += 30
 		var fx
 		var fxP
 		fx = fxboom.instance()
@@ -131,6 +138,9 @@ func _on_Spawner_screen_exited():
 	pass # Replace with function body.
 	
 func dead():
+	if givePoints:
+		User_Data.store.score += 30
+		givePoints = false
 	if !respawn:
 		state = STATE_KILLED
 		tween.stop_all()

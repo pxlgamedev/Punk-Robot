@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonExitYellow.png-572c7f63d062e8ce65aafb6acdcb65b2.stex"
+path="res://.import/PxLgamedevGame.png-8b092df703d29d15eb17efe70c311f11.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/ButtonExitYellow.png"
-dest_files=[ "res://.import/ButtonExitYellow.png-572c7f63d062e8ce65aafb6acdcb65b2.stex" ]
+source_file="res://PxLgamedevGame.png"
+dest_files=[ "res://.import/PxLgamedevGame.png-8b092df703d29d15eb17efe70c311f11.stex" ]
 
 [params]
 
@@ -27,7 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
-process/invert_color=false
+process/invert_color=true
 stream=false
 size_limit=0
 detect_3d=true

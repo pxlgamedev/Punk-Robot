@@ -99,8 +99,14 @@ material = ExtResource( 3 )
 texture = ExtResource( 4 )
 hframes = 8
 frame = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="FXLocation" type="Position2D" parent="Sprite"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
 position = Vector2( 3.8147e-006, -3.8147e-006 )
@@ -109,6 +115,9 @@ enabled = false
 texture = ExtResource( 5 )
 color = Color( 0.819608, 0.745098, 0.145098, 1 )
 energy = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 autoplay = "spin"
@@ -119,6 +128,9 @@ anims/taken = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )

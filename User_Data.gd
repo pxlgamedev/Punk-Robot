@@ -15,11 +15,6 @@ var store = {
 	# you can add as many variables as you want here, they will all be saved
 	level = 1,
 	score = 0,
-	gemY = 0,
-	gemB = 0,
-	gemG = 0,
-	gemR = 0,
-	hearts = 0,
 	health = 5,
 	maxHealth = 5,
 	lives = 3,
@@ -36,6 +31,16 @@ var prefs = {
 	fxvolume = 1, # TODO need to setup a seperate bus for effect sounds
 	HStotal = 0,
 	HSlevel0 = 0
+	}
+
+# Here we will keep current information about the game that doesn't need to be saved anywhere
+var curVars = {
+	gemY = 0, # number of yellow gems collected so far
+	gemB = 0, # Blue
+	gemG = 0, # Green
+	gemR = 0, # Red
+	hearts = 0, # number of hearts collected so far
+	difficulty = 0 # current difficulty, 1 easy, 2 medium, 3 hard
 	}
 
 func _ready():
