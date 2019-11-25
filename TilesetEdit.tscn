@@ -5,37 +5,37 @@
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -32.1216, -0.111763, 32.0555, -0.111763, 32.0122, 31.348, -31.8108, 31.7558 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( -32.1784, -0.178391, -0.124237, -0.0123062, 0.207932, 31.7097, -31.9371, 31.867 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=16]
 polygon = PoolVector2Array( -32.2527, -32.2308, -0.124241, -32.2903, 0.207932, 31.6519, -32.0949, 31.6699 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=30]
 polygon = PoolVector2Array( -31.9582, -32.0159, -64.4105, -31.8568, -63.9371, 31.8861, -31.7921, 31.7602 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( 0.207916, -32.4059, 32.2621, -0.35173, 31.648, 31.6291, -32.4105, 31.7868, -31.9371, -32.2716 )
+polygon = PoolVector2Array( 32, -32, 32, 0, -16, 32, -32, 32, -32, -32 )
 
-[sub_resource type="OccluderPolygon2D" id=6]
+[sub_resource type="OccluderPolygon2D" id=34]
 polygon = PoolVector2Array( -32.2221, -0.802002, 32.0809, -0.652115, 31.931, 31.5743, -32.2221, 31.7242 )
 
-[sub_resource type="OccluderPolygon2D" id=7]
+[sub_resource type="OccluderPolygon2D" id=36]
 polygon = PoolVector2Array( -32.2505, -0.603287, 31.8704, -0.603287, 31.8704, 31.9983, -32.2505, 31.7277 )
 
-[sub_resource type="OccluderPolygon2D" id=8]
+[sub_resource type="OccluderPolygon2D" id=28]
 polygon = PoolVector2Array( -32.2098, -32.3007, 32.1257, -32.1259, 32.1257, 0.915985, -32.035, 0.566345 )
 
-[sub_resource type="OccluderPolygon2D" id=9]
+[sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( -32.0769, -32.16, -32.0769, 63.4725, 31.746, 64.2881, 31.9499, 29.0122 )
 
 [sub_resource type="OccluderPolygon2D" id=10]
 polygon = PoolVector2Array( 1.52588e-005, -0.713684, -0.203888, -32.3193, -32.0134, -32.1154, -31.8095, -0.713684 )
 
-[sub_resource type="OccluderPolygon2D" id=11]
+[sub_resource type="OccluderPolygon2D" id=12]
 polygon = PoolVector2Array( -32.0134, -9.2778, 31.8095, -9.07388, 31.6056, 4.38397, -32.0134, 4.38397 )
 
-[sub_resource type="OccluderPolygon2D" id=12]
+[sub_resource type="OccluderPolygon2D" id=14]
 polygon = PoolVector2Array( -32.0436, -8.9283, 5.0882, -5.73299, 5.0882, 1.53912, -32.2639, 4.2937 )
 
 [node name="Node" type="Node"]
@@ -69,7 +69,7 @@ position = Vector2( 1.01954, 0 )
 polygon = PoolVector2Array( -32.5449, -24.0375, 24, -24, 24, 32, -32.9324, 31.9452 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="edge"]
-occluder = SubResource( 2 )
+occluder = SubResource( 3 )
 
 [node name="wall" type="Sprite" parent="."]
 editor/display_folded = true
@@ -85,7 +85,7 @@ editor/display_folded = true
 polygon = PoolVector2Array( -32, -32, 24, -32, 24, 32, -32, 32 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="wall"]
-occluder = SubResource( 3 )
+occluder = SubResource( 16 )
 
 [node name="Pillar Cap" type="Sprite" parent="."]
 editor/display_folded = true
@@ -101,7 +101,7 @@ polygon = PoolVector2Array( -14.3196, 0.045929, 15.5836, 0.188324, 17.0075, 31.6
 
 [node name="Pillar V" type="Sprite" parent="."]
 editor/display_folded = true
-position = Vector2( 320, 127 )
+position = Vector2( 320, 128 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 128, 64, 64 )
@@ -184,7 +184,7 @@ region_rect = Rect2( 320, 128, 128, 64 )
 polygon = PoolVector2Array( -64, -32, -8, -32, -8, 32, -64, 32 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="wall_deco"]
-occluder = SubResource( 4 )
+occluder = SubResource( 30 )
 
 [node name="corner" type="Sprite" parent="."]
 editor/display_folded = true
@@ -201,6 +201,21 @@ polygon = PoolVector2Array( -32, -32, 22.9219, -33.1953, 33.4763, -22.8728, 32, 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="corner"]
 occluder = SubResource( 5 )
 
+[node name="corner2" type="Sprite" parent="."]
+position = Vector2( 320, 256 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="collision" type="StaticBody2D" parent="corner2"]
+editor/display_folded = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="corner2/collision"]
+polygon = PoolVector2Array( -32, -32, 22.9219, -33.1953, 33.4763, -22.8728, 32, 32, -32, 32 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="corner2"]
+occluder = SubResource( 5 )
+
 [node name="flowers" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 192 )
@@ -214,7 +229,7 @@ region_rect = Rect2( 192, 192, 64, 64 )
 polygon = PoolVector2Array( -32, 32, 32, 32, 32, -24, -32, -24 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="flowers"]
-occluder = SubResource( 6 )
+occluder = SubResource( 34 )
 
 [node name="tree_base" type="Sprite" parent="."]
 editor/display_folded = true
@@ -229,14 +244,14 @@ region_rect = Rect2( 256, 192, 64, 64 )
 polygon = PoolVector2Array( -32, 32, 32, 32, 32, -24, -32, -24 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="tree_base"]
-occluder = SubResource( 7 )
+occluder = SubResource( 36 )
 
-[node name="wall_no_collision2" type="Sprite" parent="."]
+[node name="wall_no_collision" type="Sprite" parent="."]
 position = Vector2( 320, 192 )
 z_index = 2
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 64, 62.2482, 64, 65.0658 )
+region_rect = Rect2( 64, 64, 64, 64 )
 
 [node name="tree_mid" type="Sprite" parent="."]
 position = Vector2( 192, 128 )
@@ -287,7 +302,7 @@ region_rect = Rect2( 384, 64, 64, 64 )
 polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ceiling"]
-occluder = SubResource( 8 )
+occluder = SubResource( 28 )
 
 [node name="ramp" type="Sprite" parent="."]
 editor/display_folded = true
@@ -303,7 +318,7 @@ editor/display_folded = true
 polygon = PoolVector2Array( -32, -56, 0.109863, -23.8901, 32, 8, 32, 64, -32, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ramp"]
-occluder = SubResource( 9 )
+occluder = SubResource( 7 )
 
 [node name="ceiling2wall" type="Sprite" parent="."]
 editor/display_folded = true
@@ -333,7 +348,7 @@ region_rect = Rect2( 128, 0, 64, 64 )
 polygon = PoolVector2Array( 32, -24, 32, 24, -32, 24, -32, -24 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="platform_floor"]
-occluder = SubResource( 11 )
+occluder = SubResource( 12 )
 
 [node name="platform_edge" type="Sprite" parent="."]
 editor/display_folded = true
@@ -348,4 +363,4 @@ region_rect = Rect2( 192, 0, 64, 64 )
 polygon = PoolVector2Array( 24, -24, 24, 24, -32, 24, -32, -24 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="platform_edge"]
-occluder = SubResource( 12 )
+occluder = SubResource( 14 )
