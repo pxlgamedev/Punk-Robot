@@ -413,7 +413,6 @@ position = Vector2( 7750.44, 1821.88 )
 position = Vector2( 7906.34, 1808.37 )
 
 [node name="Props" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="MovingPlatform" parent="Props" instance=ExtResource( 11 )]
 position = Vector2( 1451.86, 742.969 )
@@ -504,6 +503,24 @@ position = Vector2( 6629.18, 1616.99 )
 
 [node name="OneWayPlatform27" parent="Props" instance=ExtResource( 12 )]
 position = Vector2( 6873.09, 1489.64 )
+
+[node name="OneWayPlatform31" parent="Props" instance=ExtResource( 12 )]
+position = Vector2( 8463.09, 2149.64 )
+
+[node name="OneWayPlatform32" parent="Props" instance=ExtResource( 12 )]
+position = Vector2( 8411.08, 1995.65 )
+
+[node name="OneWayPlatform33" parent="Props" instance=ExtResource( 12 )]
+position = Vector2( 8383.09, 1831.64 )
+
+[node name="OneWayPlatform34" parent="Props" instance=ExtResource( 12 )]
+position = Vector2( 8463.09, 1671.64 )
+
+[node name="OneWayPlatform35" parent="Props" instance=ExtResource( 12 )]
+position = Vector2( 8303.09, 1441.64 )
+
+[node name="OneWayPlatform36" parent="Props" instance=ExtResource( 12 )]
+position = Vector2( 8443.09, 1301.64 )
 
 [node name="OneWayPlatform28" parent="Props" instance=ExtResource( 12 )]
 position = Vector2( 6586.01, 1345.02 )
@@ -791,7 +808,7 @@ volume_db = -5.0
 autoplay = true
 
 [node name="LevelGoal" parent="." instance=ExtResource( 18 )]
-position = Vector2( 6484.18, 1956.07 )
+position = Vector2( 9687.77, 1077.28 )
 
 [node name="ParallaxBg" parent="." instance=ExtResource( 19 )]
 layer = -2
