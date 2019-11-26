@@ -43,15 +43,15 @@ onready var DetectWallRight = $DetectWallRight
 onready var sprite = $Sprite
 
 func _ready():
+	respawn = false
 	spawnPoint = self.position # store the initial position
 	if staticStart == true: # if we want enemy positions to be dynamic, set false
 		state = STATE_KILLED
-	if isHardOnly and User_Data.curVars.difficulty == 1:
-		self.call_deferred("queue_free")
-	if User_Data.curVars.difficulty == 1:
-		respawn = false
-	if User_Data.curVars.difficulty == 3:
-		staticStart = false
+	if isHardOnly and User_Data.curVars.difficulty == 1: # On easy mode
+		self.call_deferred("queue_free") # delete
+	if User_Data.curVars.difficulty == 3: #on impossible mode
+		respawn = true # Ememies will respawn as soon as they reenter the camera
+		staticStart = false # enemies will spawn at game start and begin their patrols
 
 func patrol(target):
 	if state != STATE_KILLED:

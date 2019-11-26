@@ -5,7 +5,7 @@ class_name Player
 
 const GRAVITY_VEC = Vector2(0, 900)
 const FLOOR_NORMAL = Vector2(0, -1)
-const SLOPE_SLIDE_STOP = 25.0
+const SLOPE_SLIDE_STOP = 0.0
 const WALK_SPEED = 400 # pixels/sec
 const JUMP_SPEED = 400
 const JUMP_SECOND_SPEED = 220
@@ -125,6 +125,7 @@ func _physics_process(delta):
 	### MOVEMENT ###
 
 	# Apply gravity
+	var platformSpeed = get_floor_velocity()
 	linear_vel += delta * GRAVITY_VEC
 	# Move and slide, disable infinite inertia
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP, 4, PI/4, false)
@@ -158,10 +159,10 @@ func _physics_process(delta):
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
 	# Jumping
-	if on_floor and Input.is_action_just_pressed("jump"):
-		linear_vel.y = -JUMP_SPEED
+	if on_floor:
 		JUMP_SECOND = true
-	
+	if on_floor and Input.is_action_just_pressed("jump"):
+		linear_vel.y = -JUMP_SPEED 
 	# Double Jump
 	if !on_floor and JUMP_SECOND and Input.is_action_just_pressed("jump"):
 		var fx = fxJetPack.instance() # calling this a second time instead of creating a function so it could be changed to a different effect later
@@ -230,9 +231,9 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
 			sprite.scale.x = 1
 
-		if linear_vel.y < 0:
+		if linear_vel.y < -100:
 			new_anim = "jumping"
-		else:
+		if linear_vel.y > 100:
 			new_anim = "falling"
 
 	if shoot_time < SHOOT_TIME_SHOW_WEAPON:
