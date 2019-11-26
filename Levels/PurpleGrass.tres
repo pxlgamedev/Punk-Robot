@@ -14,10 +14,10 @@ polygon = PoolVector2Array( -32.1784, -0.178391, -0.124237, -0.0123062, 0.207932
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( -32.5449, -24.0375, 24, -24, 24, 32, -32.9324, 31.9452 )
 
-[sub_resource type="OccluderPolygon2D" id=28]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( -32.2098, -32.3007, 32.1257, -32.1259, 32.1257, 0.915985, -32.035, 0.566345 )
 
-[sub_resource type="ConvexPolygonShape2D" id=29]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
@@ -83,10 +83,10 @@ points = PoolVector2Array( -4.33081, -32.0672, 23.4006, -31.8632, 31.9647, -25.3
 [sub_resource type="ConvexPolygonShape2D" id=27]
 points = PoolVector2Array( -4.71167, -31.8632, 22.408, -31.6593, 31.7877, -24.5226, 31.7877, -6.37483 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=28]
 polygon = PoolVector2Array( 32, -32, 32, 0, -16, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=38]
+[sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=30]
@@ -95,10 +95,10 @@ polygon = PoolVector2Array( -31.9582, -32.0159, -64.4105, -31.8568, -63.9371, 31
 [sub_resource type="ConvexPolygonShape2D" id=31]
 points = PoolVector2Array( -64, -32, -8, -32, -8, 32, -64, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=37]
+[sub_resource type="OccluderPolygon2D" id=32]
 polygon = PoolVector2Array( -32, -32, 0, -32, 32, 0, 32, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=39]
+[sub_resource type="ConvexPolygonShape2D" id=33]
 points = PoolVector2Array( -32, -32, 22.9219, -33.1953, 33.4763, -22.8728, 32, 32, -32, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=34]
@@ -110,7 +110,7 @@ points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
 [sub_resource type="OccluderPolygon2D" id=36]
 polygon = PoolVector2Array( -32.2505, -0.603287, 31.8704, -0.603287, 31.8704, 31.9983, -32.2505, 31.7277 )
 
-[sub_resource type="ConvexPolygonShape2D" id=40]
+[sub_resource type="ConvexPolygonShape2D" id=37]
 points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
 
 [resource]
@@ -189,13 +189,13 @@ points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
 4/region = Rect2( 64, 128, 64, 64 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 32, 32 )
-4/occluder = SubResource( 37 )
+4/occluder = SubResource( 32 )
 4/navigation_offset = Vector2( 32, 32 )
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 39 ),
+"shape": SubResource( 33 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 4/z_index = 0
@@ -229,7 +229,7 @@ points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 40 ),
+"shape": SubResource( 37 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 6/z_index = 0
@@ -270,13 +270,13 @@ points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
 11/region = Rect2( 384, 64, 64, 64 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 32, 32 )
-11/occluder = SubResource( 28 )
+11/occluder = SubResource( 5 )
 11/navigation_offset = Vector2( 32, 32 )
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 29 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 11/z_index = 0
@@ -541,13 +541,13 @@ points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
 29/region = Rect2( 320, 64, 64, 64 )
 29/tile_mode = 0
 29/occluder_offset = Vector2( 32, 32 )
-29/occluder = SubResource( 5 )
+29/occluder = SubResource( 28 )
 29/navigation_offset = Vector2( 32, 32 )
 29/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 38 ),
+"shape": SubResource( 29 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 29/z_index = 0
