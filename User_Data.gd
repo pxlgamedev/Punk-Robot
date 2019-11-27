@@ -40,10 +40,14 @@ var curVars = {
 	gemG = 0, # Green
 	gemR = 0, # Red
 	hearts = 0, # number of hearts collected so far
-	difficulty = 0 # current difficulty, 1 easy, 2 medium, 3 hard
+	difficulty = 0 # current difficulty, 1 easy, 2 medium, 3 hard, 0 debug
 	}
 
 func _ready():
+	## check if we need to be in debug mode ##
+	if !get_tree().get_root().get_node("Menu"):
+		curVars.difficulty = 0
+		print("Starting Debug mode: all consumables and enemies will spawn.")
 	# load the ini file
 	load_settings()
 	# apply the user prefferences

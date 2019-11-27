@@ -15,4 +15,5 @@ func _on_coin_body_enter(body):
 		fx.position = ($Sprite/FXLocation as Position2D).global_position # use node for shoot position
 		get_parent().add_child(fx) # 
 		taken = true
-		get_tree().get_root().get_node("Menu").end_level(nextLevel)
+		if get_tree().get_root().get_node("Menu"):
+			get_tree().get_root().get_node("Menu").end_level(nextLevel)

@@ -9,7 +9,7 @@ export var effect = preload("res://Effects/POINT10.tscn")
 export var isEasyOnly = false # it will only be availible on easy mode
 
 func _ready():
-	if isEasyOnly and !User_Data.curVars.difficulty == 1:
+	if isEasyOnly and User_Data.curVars.difficulty > 1:
 		$Sprite/Light2D.enabled = false
 		self.queue_free()
 
