@@ -19,7 +19,7 @@ onready var frame = get_node("Page") # The main node for our Comic style menu
 # We will need to manually update the scroll on each parallax background
 onready var bg0 = get_node("BgLayer/Title/GalaxyBG")
 onready var bg1 = get_node("BgLayer/Panel1/PurpleBg")
-onready var bg2 = get_node("BgLayer/Panel2/IcyBg")
+onready var bg2 = get_node("BgLayer/Panel2/CaveBg")
 
 ## Here we'll keep a list of vectors for the positions of each Comic panel in the main scene ##
 ## Moving the scene and it's contained sprites, instead of moving the camera ##

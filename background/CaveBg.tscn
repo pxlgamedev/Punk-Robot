@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://background/scroll_bg_sky.png" type="Texture" id=1]
+[ext_resource path="res://background/scroll_bg_MT_4.png" type="Texture" id=2]
+[ext_resource path="res://background/scroll_bg_MT_3.png" type="Texture" id=3]
+[ext_resource path="res://background/scroll_bg_MT_2.png" type="Texture" id=4]
+[ext_resource path="res://background/scroll_bg_smMT_1.png" type="Texture" id=5]
+[ext_resource path="res://background/scroll_bg_smMT_2.png" type="Texture" id=6]
+
+[node name="ParallaxBg" type="ParallaxBackground"]
+scale = Vector2( 1, 0.75 )
+transform = Transform2D( 1, 0, 0, 0.75, 0, 0 )
+scroll_base_scale = Vector2( 0.7, 0 )
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 800, 0 )
+
+[node name="Sprite" type="Sprite" parent="Sky"]
+modulate = Color( 0.145098, 0.0901961, 0.2, 1 )
+scale = Vector2( 100, 1.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Mount5" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.15, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Mount5"]
+modulate = Color( 0.113725, 0.0627451, 0.14902, 1 )
+position = Vector2( 1054.02, 495.983 )
+scale = Vector2( 1.02663, 1.02542 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="Mount5"]
+modulate = Color( 0.113725, 0.0627451, 0.14902, 1 )
+position = Vector2( 1054.02, 262.65 )
+scale = Vector2( -1.027, -1.025 )
+texture = ExtResource( 2 )
+
+[node name="Mount4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Mount4"]
+modulate = Color( 0.12549, 0.0627451, 0.164706, 1 )
+position = Vector2( 1042.34, 449.988 )
+scale = Vector2( 1.02093, 1.07488 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="Mount4"]
+modulate = Color( 0.12549, 0.0627451, 0.164706, 1 )
+position = Vector2( 1042.34, 273.321 )
+scale = Vector2( -1.021, -1.075 )
+texture = ExtResource( 3 )
+
+[node name="Mount3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Mount3"]
+editor/display_folded = true
+modulate = Color( 0.141176, 0.0862745, 0.172549, 1 )
+position = Vector2( 1042.34, 482.282 )
+scale = Vector2( 1.02093, 0.922688 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="Mount3"]
+editor/display_folded = true
+modulate = Color( 0.141176, 0.0862745, 0.172549, 1 )
+position = Vector2( 1042.34, 238.949 )
+scale = Vector2( -1.021, -0.923 )
+texture = ExtResource( 4 )
+
+[node name="Mount2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.37, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Mount2"]
+modulate = Color( 0.117647, 0.0862745, 0.164706, 1 )
+position = Vector2( 1061.82, 580.656 )
+scale = Vector2( 1.02663, 0.606897 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="Mount2"]
+modulate = Color( 0.117647, 0.0862745, 0.164706, 1 )
+position = Vector2( 1061.82, 160.656 )
+scale = Vector2( -1.027, -0.607 )
+texture = ExtResource( 2 )
+
+[node name="Mount1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 284.792, 668.626 )
+scale = Vector2( 0.522529, 0.514718 )
+texture = ExtResource( 5 )
+
+[node name="Sprite7" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 284.792, 61.9595 )
+scale = Vector2( -0.523, -0.515 )
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 1317.24, 674.773 )
+scale = Vector2( 0.522529, 0.514718 )
+texture = ExtResource( 5 )
+
+[node name="Sprite8" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 1317.24, 68.1063 )
+scale = Vector2( -0.523, -0.515 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 805.594, 671.872 )
+scale = Vector2( 0.522529, 0.514718 )
+texture = ExtResource( 6 )
+
+[node name="Sprite6" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 805.594, 65.2053 )
+scale = Vector2( -0.523, -0.515 )
+texture = ExtResource( 6 )
+
+[node name="Sprite5" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 1808.82, 674.903 )
+scale = Vector2( 0.522529, 0.514718 )
+texture = ExtResource( 6 )
+
+[node name="Sprite9" type="Sprite" parent="Mount1"]
+modulate = Color( 0.133333, 0.101961, 0.184314, 1 )
+position = Vector2( 1808.82, 68.236 )
+scale = Vector2( -0.523, -0.515 )
+texture = ExtResource( 6 )

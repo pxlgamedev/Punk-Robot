@@ -4,7 +4,7 @@
 [ext_resource path="res://background/Galaxy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://background/PurplePlanetFall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://background/PurpleMountainBg.tscn" type="PackedScene" id=4]
-[ext_resource path="res://background/IcyBg.tscn" type="PackedScene" id=5]
+[ext_resource path="res://background/CaveBg.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Effects/Boom.png" type="Texture" id=6]
 [ext_resource path="res://MatShadow.tres" type="Material" id=7]
 [ext_resource path="res://Menu/RocketShip.png" type="Texture" id=8]
@@ -69,18 +69,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, -540 ), Vector2( 0, 0 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Panel2/IcyBg:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.5, 2 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 540 ) ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "ChangePanel"
@@ -108,18 +96,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 0.5, 2 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -540 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Panel2/IcyBg:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.5, 2 ),
-"update": 0,
-"values": [ Vector2( 0, 540 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -324,13 +300,12 @@ render_target_update_mode = 3
 [node name="PurpleBg" parent="BgLayer/Panel1" instance=ExtResource( 4 )]
 
 [node name="Panel2" type="Viewport" parent="BgLayer"]
-editor/display_folded = true
 size = Vector2( 960, 540 )
 handle_input_locally = false
 render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="IcyBg" parent="BgLayer/Panel2" instance=ExtResource( 5 )]
+[node name="CaveBg" parent="BgLayer/Panel2" instance=ExtResource( 5 )]
 
 [node name="Tween" type="Tween" parent="BgLayer"]
 
@@ -339,6 +314,7 @@ anims/BackToMain = SubResource( 1 )
 anims/ChangePanel = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Effect" type="Sprite" parent="CanvasLayer"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -386,6 +362,7 @@ audio_listener_enable_2d = true
 [node name="Page" type="Node2D" parent="."]
 
 [node name="TitleCard" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( -959.89, -270.383 )
 texture = SubResource( 6 )
 
@@ -471,6 +448,7 @@ focus_mode = 1
 texture_normal = ExtResource( 17 )
 
 [node name="PurpleIntro2" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( -1449.89, 279.617 )
 texture = SubResource( 7 )
 
@@ -605,6 +583,7 @@ texture_normal = ExtResource( 23 )
 texture = ExtResource( 24 )
 
 [node name="Panel1" type="Sprite" parent="Page"]
+editor/display_folded = true
 position = Vector2( 481.64, 271.587 )
 texture = SubResource( 8 )
 
