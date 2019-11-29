@@ -39,6 +39,8 @@ func _on_coin_body_enter(body):
 			User_Data.store.rate -= 0.01
 		if value == "AmmoBounce":
 			User_Data.store.ammo1 += points
+		if value == "AmmoFire":
+			User_Data.store.ammo2 += points
 	if not taken:
 		gravity_scale = 1
 		mass = 1
@@ -48,3 +50,6 @@ func _on_VisibilityEnabler2D_screen_entered():
 
 func _on_VisibilityEnabler2D_screen_exited():
 	$Sprite/Light2D.enabled = false
+
+func _clear():
+	self.queue_free()

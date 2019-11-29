@@ -706,11 +706,11 @@ margin_right = -444.0
 margin_bottom = 281.631
 
 [node name="Panel3" type="Sprite" parent="Page"]
-editor/display_folded = true
 position = Vector2( 480.36, 809.648 )
 texture = SubResource( 10 )
 
-[node name="Sprite" type="Sprite" parent="Page/Panel3"]
+[node name="Water" type="Sprite" parent="Page/Panel3"]
+visible = false
 material = SubResource( 12 )
 position = Vector2( 3.07574, 258.113 )
 scale = Vector2( 16.1547, 1.52055 )

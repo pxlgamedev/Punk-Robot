@@ -137,13 +137,14 @@ func _on_Spawner_screen_entered():
 func _on_Spawner_screen_exited():
 	pass # Replace with function body.
 	
-func dead():
+func _dead():
 	if givePoints:
 		User_Data.store.score += 30
 		givePoints = false
 	if !respawn:
 		state = STATE_KILLED
-		tween.stop_all()
+		if tween != null:
+			tween.stop_all()
 		call_deferred("queue_free")
 	if respawn:
 		state = STATE_KILLED

@@ -116,7 +116,11 @@ func _physics_process(delta):
 		$"UI/Heart 01".update_health(1)
 		checkhealth = false
 		if User_Data.store.health < 1:
-			Game_Over() # end the game when we are out of health
+			if User_Data.curVars.difficulty == 0:
+				User_Data.store.health = 1
+				print("Dev is a cheater") 
+			if User_Data.curVars.difficulty > 0:
+				Game_Over() # end the game when we are out of health
 		if User_Data.store.health > User_Data.store.maxHealth:
 			User_Data.store.health = User_Data.store.maxHealth
 			print("too much health")

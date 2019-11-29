@@ -70,7 +70,7 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "dead()"
+"method": "_dead"
 } ]
 }
 
@@ -140,7 +140,6 @@ height = 14.2002
 collision_layer = 3
 script = ExtResource( 1 )
 staticStart = false
-respawn = true
 
 [node name="DamageRange" type="Area2D" parent="."]
 
