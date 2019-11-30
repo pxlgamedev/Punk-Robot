@@ -1,4 +1,7 @@
 extends Sprite
+
+### Unused menu animation ###
+
 var anim = ""
 
 func start_hover():

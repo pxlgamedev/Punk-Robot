@@ -1,16 +1,19 @@
 extends Sprite
 
+###########################################################
+### Controller for the onscreen Hearts depicting health ###
+###########################################################
+
 var state = 5 # state machine
 var anim = "" # string for tracking the animation state
 var heartnum = 0 # used to identify which heart symbol this sprite is
 
-func update_health(num): # the number sent from the player object, identifies which heart we are
-	heartnum = num # ubdate what number we are
+func update_health(num): # the int sent from the player object, identifies which heart we are
+	heartnum = num # update what number we are
 	$AnimationPlayer.play(anim) # restart the animation to ensure they sync
 
 func _physics_process(delta):
 	var new_anim = "Glowing" # for setting our new animation state, start with the default animation
-	
 	if heartnum > User_Data.store.health: #if the current heart number is higher than player health
 		if self.visible == true: # if this heart is still visible
 			self.visible = false # turn the sprite off

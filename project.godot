@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://enemy/enemy.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "EnemyWithWeapon",
-"language": "GDScript",
-"path": "res://enemy/enemywithweapon.gd"
-}, {
 "base": "Area2D",
 "class": "LevelGoal",
 "language": "GDScript",
@@ -58,7 +53,6 @@ _global_script_class_icons={
 "Bullet": "",
 "Coin": "",
 "Enemy": "",
-"EnemyWithWeapon": "",
 "LevelGoal": "",
 "Menu": "",
 "MovingPlatform": "",

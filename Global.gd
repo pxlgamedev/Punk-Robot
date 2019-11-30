@@ -1,5 +1,11 @@
 extends Node
 
+############################################################################
+### A Global Scene manager for changing the main scene without conflicts ###
+############################################################################
+
+## Currently only used to relaod the game after a game over
+
 var current_scene = null
 
 func _ready():
@@ -7,8 +13,6 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 func goto_scene(path):
-	#var root = get_tree().get_root()
-	#current_scene = root.get_child(root.get_child_count() - 1)
 	# this will defer any scene load to a later time, when we can be sure that no code from the current scene is running:
 	call_deferred("_deferred_goto_scene", path)
 

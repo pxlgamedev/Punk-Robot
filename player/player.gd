@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 class_name Player
 
-
 const GRAVITY_VEC = Vector2(0, 900)
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 0.0
@@ -256,5 +255,5 @@ func on_player_body_enter(body):
 
 func Game_Over():
 	print("Game Over")
-	User_Data.new_game()
-	Global.goto_scene("res://MainMenu.tscn")
+	if get_tree().get_root().get_node("Menu"):
+			get_tree().get_root().get_node("Menu").end_level("")

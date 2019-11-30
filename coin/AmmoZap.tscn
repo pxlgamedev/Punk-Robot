@@ -90,7 +90,8 @@ collision_mask = 2
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 script = ExtResource( 1 )
-points = 0
+value = "FireRate"
+points = 1
 effect = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -17,17 +17,18 @@ var store = {
 	score = 0,
 	health = 5,
 	maxHealth = 5,
-	lives = 3,
-	rate = 0.55,
-	ammo1 = 1,
-	ammo2 = 20
+	lives = 3, # not currently used in Punk Robot
+	rate = 0.80,
+	ammo1 = 0,
+	ammo2 = 0
 	}
 
 # here we're going to store prefferences seperately into an ini file, things like volume or control settings
+# NOT implimented
 var prefs = {
 	# changes here need to be manually saved to prevent them from being overwritten at game start
 	playername = "",
-	volume = -1000,
+	volume = -10,
 	fxvolume = 1, # TODO need to setup a seperate bus for effect sounds
 	HStotal = 0,
 	HSlevel0 = 0
@@ -35,30 +36,32 @@ var prefs = {
 
 # Here we will keep current information about the game that doesn't need to be saved anywhere
 var curVars = {
-	gemY = 0, # number of yellow gems collected so far
+	gemY = 0, # Number of Yellow gems collected so far
 	gemB = 0, # Blue
 	gemG = 0, # Green
 	gemR = 0, # Red
-	hearts = 0, # number of hearts collected so far
-	difficulty = 0 # current difficulty, 1 easy, 2 medium, 3 hard, 0 debug
+	hearts = 0, # Number of hearts collected so far
+	difficulty = 0 # Current difficulty, 1 easy, 2 medium, 3 hard, 0 debug
+	## When running a stage directly, debug will be the default difficulty ##
 	}
 
 func _ready():
 	## check if we need to be in debug mode ##
-	if !get_tree().get_root().get_node("Menu"):
-		curVars.difficulty = 0
-		print("Starting Debug mode: all consumables and enemies will spawn.")
+	if !get_tree().get_root().get_node("Menu"): # if the root node is not the menu
+		curVars.difficulty = 0 # debug mode
+		print("Starting Debug mode: all consumables and enemies will spawn, game over screen disabled.")
 	# load the ini file
 	load_settings()
 	# apply the user prefferences
 	apply_settings()
 	# check at the start if a Saves directory exists in the user folder
-	#TODO for testing purposed we are using res://saves
+	#TODO for testing purposes we are using res://saves, should be changed to user://Saves
+	### Save feature was not fully implimented in Punk Robot for the Game Jam ###
 	var dir = Directory.new()
-	if !dir.dir_exists("user://Saves"):
+	if !dir.dir_exists("res://Saves"):
 		# if not we'll create it.
-		dir.open("user://")
-		dir.make_dir("user://Saves")
+		dir.open("res://")
+		dir.make_dir("res://Saves")
 
 # we'll setup quicksave and quickload buttons here:
 func _physics_process(delta):

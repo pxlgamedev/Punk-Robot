@@ -2,6 +2,7 @@ extends Node2D
 
 class_name MovingPlatform
 
+## Default moving platform script from Godot Tutorial project "2D Platformer" ##
 
 # Member variables
 export var motion = Vector2()

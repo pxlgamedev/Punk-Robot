@@ -45,6 +45,7 @@ tracks/2/keys = {
 }
 
 [node name="FXPow" type="Node2D"]
+pause_mode = 2
 
 [node name="ZapSprite" type="Sprite" parent="."]
 self_modulate = Color( 0.917647, 0.72549, 0.72549, 0.333333 )
