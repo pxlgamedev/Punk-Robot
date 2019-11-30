@@ -9,4 +9,4 @@ While 'only' a game jam entry, Punk Robot is a full featured platformer with thr
 
 Created in Godot,  an open source game engine, for the github Game Off Game Jam!
 
-All code and project files in this repository are free to use, but artwork and game titles are for personal use only.
+All code and project files in this repository are free to use (MIT), but artwork and game titles are for personal use only.
